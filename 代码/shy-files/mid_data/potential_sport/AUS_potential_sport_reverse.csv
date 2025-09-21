@@ -1,0 +1,54 @@
+NOC,Sport,NoMedal,HasMedal,Rate
+AUS,"3x3 Basketball, Basketball",1,0,1.0
+AUS,3x3 Basketball,1,0,1.0
+AUS,Trampolining,2,0,1.0
+AUS,"Marathon Swimming, Swimming",2,0,1.0
+AUS,Breaking,2,0,1.0
+AUS,Rhythmic Gymnastics,6,0,1.0
+AUS,Wrestling,6,0,1.0
+AUS,Artistic Swimming,4,0,1.0
+AUS,Football,4,0,1.0
+AUS,Sport Climbing,4,0,1.0
+AUS,Synchronized Swimming,4,0,1.0
+AUS,Cycling Mountain Bike,3,0,1.0
+AUS,Trampoline Gymnastics,3,0,1.0
+AUS,Artistic Gymnastics,22,0,1.0
+AUS,Judo,19,0,1.0
+AUS,Table Tennis,18,0,1.0
+AUS,Gymnastics,13,0,1.0
+AUS,Taekwondo,13,0,1.0
+AUS,Weightlifting,12,0,1.0
+AUS,Badminton,11,0,1.0
+AUS,Golf,6,0,1.0
+AUS,Karate,1,0,1.0
+AUS,Baseball/Softball,1,0,1.0
+AUS,Volleyball,1,0,1.0
+AUS,Shooting,54,2,0.9285714285714286
+AUS,Equestrianism,11,1,0.8333333333333334
+AUS,Archery,11,1,0.8333333333333334
+AUS,Boxing,28,3,0.8064516129032258
+AUS,Tennis,18,2,0.8
+AUS,Triathlon,9,1,0.8
+AUS,Athletics,131,15,0.7945205479452055
+AUS,Canoeing,25,4,0.7241379310344828
+AUS,Modern Pentathlon,6,1,0.7142857142857143
+AUS,Rugby Sevens,5,1,0.6666666666666667
+AUS,Beach Volleyball,5,1,0.6666666666666667
+AUS,Diving,20,4,0.6666666666666667
+AUS,Cycling BMX Racing,4,1,0.6
+AUS,Canoe Sprint,12,3,0.6
+AUS,Cycling,30,8,0.5789473684210527
+AUS,Equestrian,11,3,0.5714285714285714
+AUS,Cycling Road,7,2,0.5555555555555556
+AUS,Cycling Track,20,6,0.5384615384615384
+AUS,Hockey,6,2,0.5
+AUS,Water Polo,6,2,0.5
+AUS,Marathon Swimming,3,1,0.5
+AUS,Skateboarding,8,3,0.4545454545454546
+AUS,Rowing,27,13,0.35
+AUS,Surfing,4,2,0.33333333333333337
+AUS,Swimming,112,58,0.3176470588235294
+AUS,Basketball,5,3,0.25
+AUS,Sailing,19,12,0.22580645161290325
+AUS,Canoe Slalom,6,5,0.09090909090909094
+AUS,Cycling BMX Freestyle,2,2,0.0

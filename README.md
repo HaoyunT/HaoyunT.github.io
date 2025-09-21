@@ -1,1 +1,0 @@
-[2025美赛论文](https://haoyunt.github.io/2025年美赛.pdf)

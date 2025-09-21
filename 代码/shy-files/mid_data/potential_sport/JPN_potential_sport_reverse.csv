@@ -1,0 +1,54 @@
+NOC,Sport,NoMedal,HasMedal,Rate
+JPN,Handball,3,0,1.0
+JPN,Cycling BMX Freestyle,3,0,1.0
+JPN,Water Polo,4,0,1.0
+JPN,Trampolining,4,0,1.0
+JPN,Cycling BMX Racing,3,0,1.0
+JPN,Canoe Sprint,6,0,1.0
+JPN,Rugby Sevens,6,0,1.0
+JPN,Cycling Road,5,0,1.0
+JPN,Hockey,5,0,1.0
+JPN,Rhythmic Gymnastics,5,0,1.0
+JPN,Artistic Swimming,4,0,1.0
+JPN,Beach Volleyball,4,0,1.0
+JPN,Marathon Swimming,4,0,1.0
+JPN,Trampoline Gymnastics,4,0,1.0
+JPN,Shooting,38,0,1.0
+JPN,Canoe Slalom,10,0,1.0
+JPN,Cycling,18,0,1.0
+JPN,Triathlon,9,0,1.0
+JPN,Equestrianism,9,0,1.0
+JPN,Taekwondo,7,0,1.0
+JPN,Rowing,10,0,1.0
+JPN,3x3 Basketball,2,0,1.0
+JPN,Cycling Mountain Bike,3,0,1.0
+JPN,Sailing,26,1,0.962962962962963
+JPN,Cycling Track,19,1,0.95
+JPN,Athletics,105,6,0.9459459459459459
+JPN,Tennis,15,1,0.9375
+JPN,Diving,14,1,0.9333333333333333
+JPN,Canoeing,11,1,0.9166666666666666
+JPN,Equestrian,9,1,0.9
+JPN,Modern Pentathlon,7,1,0.875
+JPN,Weightlifting,18,3,0.8571428571428572
+JPN,Football,6,1,0.8571428571428572
+JPN,Volleyball,5,1,0.8333333333333334
+JPN,Swimming,99,22,0.8181818181818181
+JPN,Basketball,4,1,0.8
+JPN,Gymnastics,24,6,0.8
+JPN,Fencing,27,7,0.7941176470588236
+JPN,Archery,14,4,0.7777777777777778
+JPN,Artistic Gymnastics,28,9,0.7567567567567568
+JPN,Golf,6,2,0.75
+JPN,Badminton,17,6,0.7391304347826086
+JPN,Breaking,2,1,0.6666666666666667
+JPN,Surfing,4,2,0.6666666666666667
+JPN,Boxing,9,5,0.6428571428571428
+JPN,Karate,5,3,0.625
+JPN,Table Tennis,11,10,0.5238095238095238
+JPN,Synchronized Swimming,2,2,0.5
+JPN,Sport Climbing,3,3,0.5
+JPN,Skateboarding,8,9,0.47058823529411764
+JPN,Wrestling,17,31,0.35416666666666663
+JPN,Judo,19,39,0.3275862068965517
+JPN,Baseball/Softball,0,2,0.0
