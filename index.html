@@ -3,60 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haoyun's Personal Website</title>
+    <title>唐浩云的个人主页</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- 导航栏 -->
     <header>
         <nav>
             <ul>
                 <li><a href="#home">首页</a></li>
                 <li><a href="#about">关于我</a></li>
+                <li><a href="#education">教育背景</a></li>
+                <li><a href="#research">科研经历</a></li>
+                <li><a href="#projects">项目经历</a></li>
+                <li><a href="#awards">获奖荣誉</a></li>
                 <li><a href="#skills">技能</a></li>
-                <li><a href="#projects">项目</a></li>
                 <li><a href="#contact">联系方式</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- 首页 -->
     <section id="home">
         <div class="intro">
-            <img src="images/profile.jpg" alt="Haoyun's Avatar">
-            <h1>你好，我是 Haoyun</h1>
-            <p>欢迎来到我的个人主页！</p>
+            <img src="images/profile.jpg" alt="头像" class="avatar">
+            <h1>唐浩云</h1>
+            <p>数学与应用数学 | 数据分析 | 深度学习 | 强化学习</p>
         </div>
     </section>
 
+    <!-- 关于我 -->
     <section id="about">
         <h2>关于我</h2>
-        <p>我是一个热爱编程的开发者，擅长 Python 和前端开发。</p>
-    </section>
-
-    <section id="skills">
-        <h2>技能</h2>
         <ul>
-            <li>Python</li>
-            <li>JavaScript</li>
-            <li>HTML/CSS</li>
-            <li>Git/GitHub</li>
+            <li>年龄：21岁</li>
+            <li>性别：男</li>
+            <li>民族：汉</li>
+            <li>籍贯：河北省唐山市</li>
+            <li>政治面貌：中共预备党员</li>
         </ul>
     </section>
 
+    <!-- 教育背景 -->
+    <section id="education">
+        <h2>教育背景</h2>
+        <p>新疆大学 - 数学与应用数学（国家理科基地班）- 211 本科</p>
+        <p>学分绩点：4.34 / 5.00 | 专业排名：3/120 | CET6：458</p>
+        <h3>主修课程</h3>
+        <p>数学分析（100）、高等代数（98）、常微分方程（99）、实变函数（100）、复变函数（97）、解析几何（100）、概率论（90）、数理统计（100）、偏微分方程（95）、近世代数（99）、数学建模（100）、大学物理（95）、C语言（92）</p>
+    </section>
+
+    <!-- 科研经历 -->
+    <section id="research">
+        <h2>科研经历</h2>
+        <p><strong>国家级大学生创新训练计划</strong>《基于采样控制的时空网络无源性分析》</p>
+        <p>项目负责人，2024.09-至今 | 指导教师：胡成教授</p>
+        <ul>
+            <li>论文1：Adaptive Passivity-based Synchronization...（第一作者，CISC 2025）</li>
+            <li>论文2：Spatial Sampling-based Passivity...（第二作者，CNSNS）</li>
+        </ul>
+    </section>
+
+    <!-- 项目经历 -->
     <section id="projects">
-        <h2>项目展示</h2>
+        <h2>项目经历</h2>
         <ul>
-            <li><a href="https://github.com/HaoyunT/Project1">项目 1</a></li>
-            <li><a href="https://github.com/HaoyunT/Project2">项目 2</a></li>
+            <li>基于时间序列的2028各国奥运实力分析 | LSTM+XGBoost模型开发</li>
+            <li>基于DDQN算法的超级玛丽强化学习项目 | 卷积神经网络训练及可视化</li>
         </ul>
     </section>
 
+    <!-- 获奖荣誉 -->
+    <section id="awards">
+        <h2>获奖荣誉</h2>
+        <ul>
+            <li>2023年高教社杯全国大学生数学建模竞赛省特等奖</li>
+            <li>第十五届全国大学生数学竞赛（数学A类）省一等奖</li>
+            <li>美国大学生数学建模竞赛Meritorious Winner（一等奖）</li>
+        </ul>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills">
+        <h2>技能与工具</h2>
+        <ul>
+            <li>编程语言：MATLAB, Python</li>
+            <li>工具：VSCode, Zotero, Git, AxGlyph, Axmath</li>
+            <li>写作：LaTeX, Word</li>
+            <li>数据分析、数值模拟、深度学习、强化学习</li>
+        </ul>
+    </section>
+
+    <!-- 联系方式 -->
     <section id="contact">
         <h2>联系方式</h2>
-        <p>邮箱：haoyun@example.com</p>
+        <p>电话/微信：15512506753</p>
+        <p>邮箱：<a href="mailto:haoyuntang224@163.com">haoyuntang224@163.com</a></p>
+        <p>GitHub：<a href="https://github.com/HaoyunT">https://github.com/HaoyunT</a></p>
     </section>
 
     <footer>
-        <p>&copy; 2025 Haoyun</p>
+        <p>&copy; 2025 唐浩云</p>
     </footer>
 </body>
 </html>
