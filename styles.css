@@ -5,6 +5,34 @@
     box-sizing: border-box;
 }
 
+:root {
+    /* Light theme colors */
+    --bg-primary: linear-gradient(135deg, #fdfdfd 0%, #f8fafc 50%, #f1f5f9 100%);
+    --bg-secondary: #ffffff;
+    --bg-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    --bg-hero: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --text-primary: #2d3748;
+    --text-secondary: #4a5568;
+    --text-light: #718096;
+    --border-color: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --nav-bg: rgba(255, 255, 255, 0.98);
+}
+
+[data-theme="dark"] {
+    /* Dark theme colors */
+    --bg-primary: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+    --bg-secondary: #2d3748;
+    --bg-card: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+    --bg-hero: linear-gradient(135deg, #4c51bf 0%, #553c9a 100%);
+    --text-primary: #f7fafc;
+    --text-secondary: #cbd5e0;
+    --text-light: #a0aec0;
+    --border-color: #4a5568;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --nav-bg: rgba(45, 55, 72, 0.98);
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -12,9 +40,10 @@ html {
 body {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
-    color: #2d3748;
-    background: linear-gradient(135deg, #fdfdfd 0%, #f8fafc 50%, #f1f5f9 100%);
+    color: var(--text-primary);
+    background: var(--bg-primary);
     background-attachment: fixed;
+    transition: all 0.3s ease;
 }
 
 /* Add subtle animations */
@@ -47,7 +76,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
-    color: #1a202c;
+    color: var(--text-primary);
 }
 
 .container {
@@ -62,11 +91,11 @@ h1, h2, h3, h4, h5, h6 {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.98);
+    background: var(--nav-bg);
     backdrop-filter: blur(15px);
     z-index: 1000;
     box-shadow: 0 4px 30px rgba(102, 126, 234, 0.1);
-    border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .navbar {
@@ -94,7 +123,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: var(--text-primary);
     font-weight: 500;
     transition: color 0.3s ease;
     position: relative;
@@ -128,9 +157,41 @@ h1, h2, h3, h4, h5, h6 {
 .nav-toggle span {
     width: 25px;
     height: 3px;
-    background: #333;
+    background: var(--text-primary);
     margin: 3px 0;
     transition: 0.3s;
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.control-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.control-btn:hover {
+    background: rgba(102, 126, 234, 0.1);
+    color: #667eea;
+}
+
+.lang-text {
+    font-weight: 600;
+    font-size: 0.9rem;
 }
 
 /* Main Content */
@@ -142,9 +203,9 @@ h1, h2, h3, h4, h5, h6 {
 .section {
     margin: 4rem 0;
     padding: 2rem;
-    background: white;
+    background: var(--bg-secondary);
     border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 20px var(--shadow-color);
 }
 
 .section h2 {
@@ -192,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* About Section */
 .about-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: var(--bg-hero);
     color: white;
     margin-top: 2rem;
 }
@@ -213,10 +274,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .name-chinese {
     font-size: 1.8rem;
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.95);
     margin-left: 1rem;
     font-style: italic;
-    font-weight: 400;
+    font-weight: 500;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .name-chinese {
@@ -317,7 +379,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bio strong {
-    color: #2d3748;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -419,13 +481,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .authors {
-    color: #666;
+    color: var(--text-secondary);
     font-style: italic;
     margin-bottom: 0.5rem;
 }
 
 .authors strong {
-    color: #2d3748;
+    color: var(--text-primary);
     font-weight: 600;
 }
 
@@ -436,7 +498,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .description {
-    color: #555;
+    color: var(--text-secondary);
     line-height: 1.6;
 }
 
@@ -471,7 +533,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .edu-institution {
     font-size: 1.1rem;
-    color: #2d3748;
+    color: var(--text-primary);
     margin-bottom: 0.8rem;
     font-weight: 600;
     line-height: 1.4;
@@ -613,11 +675,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .project-card {
     padding: 2.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    background: var(--bg-card);
     border-radius: 16px;
     transition: all 0.4s ease;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 20px rgba(102, 126, 234, 0.08);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 20px var(--shadow-color);
     position: relative;
     overflow: hidden;
 }
@@ -648,8 +710,12 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
 }
 
+.project-card h3 {
+    color: var(--text-primary);
+}
+
 .project-card h3 a {
-    color: #2d3748;
+    color: var(--text-primary);
     text-decoration: none;
 }
 
@@ -658,7 +724,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card p {
-    color: #666;
+    color: var(--text-secondary);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -808,6 +874,10 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
+[data-theme="dark"] .footer {
+    background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+}
+
 .footer::before {
     content: '';
     position: absolute;
@@ -850,6 +920,11 @@ h1, h2, h3, h4, h5, h6 {
     
     .nav-toggle {
         display: flex;
+    }
+    
+    .nav-controls {
+        order: -1;
+        margin-right: auto;
     }
     
     .about-content {
@@ -1001,3 +1076,128 @@ h1, h2, h3, h4, h5, h6 {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 15px 15px 0 0;
 }
+
+/* Dark Theme Support for Publications, Experience, and Awards */
+[data-theme="dark"] .publication-item {
+    background: var(--bg-card);
+    border-left-color: var(--accent-color);
+}
+
+[data-theme="dark"] .publication-item:hover {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .publication-item h3,
+[data-theme="dark"] .publication-item h3 a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .publication-item h3 a:hover {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .publication-item .authors {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .publication-item .venue {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .publication-item .description {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .experience-item {
+    background: var(--bg-card);
+}
+
+[data-theme="dark"] .experience-item .period {
+    background: var(--accent-color);
+    color: var(--bg-primary);
+}
+
+[data-theme="dark"] .experience-item h3 {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .experience-item p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .award-item {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-color);
+}
+
+[data-theme="dark"] .award-item:hover {
+    background: var(--bg-secondary);
+}
+
+[data-theme="dark"] .award-date {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .award-name {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .award-name a {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .award-name a:hover {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .award-org {
+    color: var(--text-secondary);
+}
+
+/* Dark Theme Support for Education */
+[data-theme="dark"] .education-entry {
+    border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .edu-institution {
+    color: var(--text-primary);
+}
+
+[data-theme="dark"] .edu-degree {
+    color: var(--accent-color);
+}
+
+[data-theme="dark"] .edu-details {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .edu-details p {
+    color: var(--text-secondary);
+}
+
+[data-theme="dark"] .edu-logo {
+    background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-secondary) 100%);
+    border-color: rgba(102, 126, 234, 0.3);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.2);
+}
+
+[data-theme="dark"] .edu-logo:hover {
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.35);
+    border-color: rgba(102, 126, 234, 0.5);
+}
+
+/* Dark Theme Support for PDF Links */
+[data-theme="dark"] .pdf-link {
+    color: #ff6b7a;
+    background: linear-gradient(135deg, rgba(255, 107, 122, 0.15) 0%, rgba(255, 107, 122, 0.08) 100%);
+    border-color: rgba(255, 107, 122, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 107, 122, 0.2);
+}
+
+[data-theme="dark"] .pdf-link:hover {
+    color: var(--bg-primary);
+    background: linear-gradient(135deg, #ff6b7a 0%, #e55368 100%);
+    border-color: #ff6b7a;
+    box-shadow: 0 4px 15px rgba(255, 107, 122, 0.4);
+}
+
