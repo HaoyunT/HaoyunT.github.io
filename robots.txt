@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://haoyunt.github.io/sitemap.xml
+
+# Allow access to CSS and JS files
+Allow: /styles.css
+Allow: /script.js
+Allow: /images/
+
+# Crawl-delay (optional)
+Crawl-delay: 1
