@@ -1,111 +1,278 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>唐浩云的个人主页</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Haoyun Tang - Academic Homepage</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
 </head>
 <body>
-    <!-- 导航栏 -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#home">首页</a></li>
-                <li><a href="#about">关于我</a></li>
-                <li><a href="#education">教育背景</a></li>
-                <li><a href="#research">科研经历</a></li>
-                <li><a href="#projects">项目经历</a></li>
-                <li><a href="#awards">获奖荣誉</a></li>
-                <li><a href="#skills">技能</a></li>
-                <li><a href="#contact">联系方式</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="container">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <h1>Haoyun Tang</h1>
+                </div>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#education">Education</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#awards">Awards</a>
+                    <a href="#projects">Projects</a>
+                </div>
+                <div class="nav-toggle" id="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </header>
 
-    <!-- 首页 -->
-    <section id="home">
-        <div class="intro">
-            <img src="images/profile.jpg" alt="头像" class="avatar">
-            <h1>唐浩云</h1>
-            <p>数学与应用数学 | 数据分析 | 深度学习 | 强化学习</p>
-        </div>
-    </section>
+        <main class="main-content">
+            <!-- About Section -->
+            <section id="about" class="section about-section no-animation">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h1 class="name-title">
+                            Haoyun Tang
+                        </h1>
+                        
+                        <div class="contact-info">
+                            <p><i class="fas fa-envelope"></i> E-mail: <a href="mailto:haoyuntang224@163.com" onclick="copyEmail(event)">haoyuntang224@163.com</a></p>
+                        </div>
 
-    <!-- 关于我 -->
-    <section id="about">
-        <h2>关于我</h2>
-        <ul>
-            <li>年龄：21岁</li>
-            <li>性别：男</li>
-            <li>民族：汉</li>
-            <li>籍贯：河北省唐山市</li>
-            <li>政治面貌：中共预备党员</li>
-        </ul>
-    </section>
+                        <div class="social-links">
+                            <a href="https://github.com/HaoyunT" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://orcid.org/0009-0001-6493-2806" target="_blank">
+                                <i class="ai ai-orcid"></i> ORCID
+                            </a>
+                        </div>
 
-    <!-- 教育背景 -->
-    <section id="education">
-        <h2>教育背景</h2>
-        <p>新疆大学 - 数学与应用数学（国家理科基地班）- 211 本科</p>
-        <p>学分绩点：4.34 / 5.00 | 专业排名：3/120 | CET6：458</p>
-        <h3>主修课程</h3>
-        <p>数学分析（100）、高等代数（98）、常微分方程（99）、实变函数（100）、复变函数（97）、解析几何（100）、概率论（90）、数理统计（100）、偏微分方程（95）、近世代数（99）、数学建模（100）、大学物理（95）、C语言（92）</p>
-    </section>
+                        <div class="bio">
+                            <p>I am an undergraduate student in Mathematics and Applied Mathematics at the School of Mathematics and System Science, Xinjiang University. I will pursue a Master's degree in Applied Mathematics at the School of Mathematics and Statistics, Xi'an Jiaotong University, starting in September 2026.</p>
+                            <p>My research interests include <strong>control theory</strong>, <strong>passivity analysis and synchronization control</strong>, <strong>deep reinforcement learning</strong>, and <strong>multi-agent adversarial games</strong>. I am passionate about academic research and committed to contributing to the intersection of control systems and artificial intelligence.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="profile-image">
+                        <img src="images/111.jpg" alt="Haoyun Tang" onerror="this.src='https://via.placeholder.com/300x300/4F46E5/ffffff?text=HT'">
+                    </div>
+                </div>
+            </section>
 
-    <!-- 科研经历 -->
-    <section id="research">
-        <h2>科研经历</h2>
-        <p><strong>国家级大学生创新训练计划</strong>《基于采样控制的时空网络无源性分析》</p>
-        <p>项目负责人，2024.09-至今 | 指导教师：胡成教授</p>
-        <ul>
-            <li>论文1：Adaptive Passivity-based Synchronization...（第一作者，CISC 2025）</li>
-            <li>论文2：Spatial Sampling-based Passivity...（第二作者，CNSNS）</li>
-        </ul>
-    </section>
+            <!-- Publications Section -->
+            <section id="publications" class="section">
+                <h2><i class="ai ai-google-scholar"></i> Publications</h2>
+                <div class="publications-list">
+                    <div class="publication-item">
+                        <h3>Spatial Sampling-based Passivity and Synchronization of Multiweighted Coupled Reaction-diffusion Neural Networks <a href="paper/论文-1.pdf" target="_blank" class="pdf-link">【PDF】</a></h3>
+                        <p class="authors">Haodong Cui, <strong>Haoyun Tang</strong>, Mingyu Ma, Cheng Hu*, Tingting Shi</p>
+                        <p class="venue">Communications in Nonlinear Science and Numerical Simulation (SCI Q1), 2025</p>
+                        <p class="description">This paper constructs a multi-weighted coupled reaction-diffusion neural network model integrating various time delays, establishes passivity and synchronization criteria applicable to systems with input-output dimension mismatch, and designs spatial point sampling controllers with adaptive control strategies. My contributions include theoretical derivation, image encryption applications, introduction writing, and numerical simulation sections.</p>
+                    </div>
+                    
+                    <div class="publication-item">
+                        <h3>Adaptive Passivity-based Synchronization of Spatiotemporal Neural Networks with Multi-weighted Coupling under Spatially Point Measurements <a href="paper/论文-2.pdf" target="_blank" class="pdf-link">【PDF】</a></h3>
+                        <p class="authors"><strong>Haoyun Tang</strong>, Haodong Cui, Mingyu Ma, Cheng Hu*, Tingting Shi</p>
+                        <p class="venue">Chinese Intelligent Systems Conference (CISC), 2025</p>
+                        <p class="description">This paper proposes adaptive sampling controllers that dynamically adjust control gains to achieve strict passivity and synchronization of multi-weighted coupled spatiotemporal networks. By employing vector rearrangement techniques, the strong connectivity requirement for each layer is relaxed to the irreducibility of the weighted union graph. My contributions include theoretical derivation, numerical simulation framework design, MATLAB code development, and paper writing.</p>
+                    </div>
+                </div>
+            </section>
 
-    <!-- 项目经历 -->
-    <section id="projects">
-        <h2>项目经历</h2>
-        <ul>
-            <li>基于时间序列的2028各国奥运实力分析 | LSTM+XGBoost模型开发</li>
-            <li>基于DDQN算法的超级玛丽强化学习项目 | 卷积神经网络训练及可视化</li>
-        </ul>
-    </section>
+            <!-- Education Section -->
+            <section id="education" class="section">
+                <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                <div class="education-list">
+                    <div class="education-entry">
+                        <img src="images/西安交通大学.jpg" alt="西安交通大学" class="edu-logo">
+                        <div class="education-content">
+                            <div class="edu-institution">
+                                <strong>Xi'an Jiaotong University</strong>, School of Mathematics and Statistics, Xi'an, China
+                            </div>
+                            <div class="edu-degree">M.S. in Applied Mathematics, Sep. 2026 ~ Jun. 2029</div>
+                            <div class="edu-details">
+                                <p>Research Focus: Multi-Agent Deep Reinforcement Learning (MADRL)</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="education-entry">
+                        <img src="images/新疆大学.jpg" alt="新疆大学" class="edu-logo">
+                        <div class="education-content">
+                            <div class="edu-institution">
+                                <strong>Xinjiang University</strong>, School of Mathematics and System Science, Urumqi, China
+                            </div>
+                            <div class="edu-degree">B.S. in Mathematics and Applied Mathematics, Sep. 2022 ~ Jun. 2026</div>
+                            <div class="edu-details">
+                                <p>Core Courses: Mathematical Analysis, Advanced Algebra, Ordinary Differential Equations, Probability Theory and Mathematical Statistics</p>
+                                <p>Academic Standing: Top 3%, recipient of three national-level awards and seven provincial-level awards, with two published papers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- 获奖荣誉 -->
-    <section id="awards">
-        <h2>获奖荣誉</h2>
-        <ul>
-            <li>2023年高教社杯全国大学生数学建模竞赛省特等奖</li>
-            <li>第十五届全国大学生数学竞赛（数学A类）省一等奖</li>
-            <li>美国大学生数学建模竞赛Meritorious Winner（一等奖）</li>
-        </ul>
-    </section>
+            <!-- Experience Section -->
+            <section id="experience" class="section">
+                <h2><i class="fas fa-briefcase"></i> Research Experience</h2>
+                <div class="experience-list">
+                    <div class="experience-item">
+                        <div class="period">Incoming</div>
+                        <div class="details">
+                            <h3>Graduate Research</h3>
+                            <p>Xi'an Jiaotong University, School of Mathematics and Statistics</p>
+                            <p>Will begin graduate studies in control theory and applied mathematics, with a focus on multi-agent reinforcement learning and neural network control systems.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    <!-- 技能 -->
-    <section id="skills">
-        <h2>技能与工具</h2>
-        <ul>
-            <li>编程语言：MATLAB, Python</li>
-            <li>工具：VSCode, Zotero, Git, AxGlyph, Axmath</li>
-            <li>写作：LaTeX, Word</li>
-            <li>数据分析、数值模拟、深度学习、强化学习</li>
-        </ul>
-    </section>
+            <!-- Awards Section -->
+            <section id="awards" class="section">
+                <h2><i class="fas fa-trophy"></i> Honors & Awards</h2>
+                <div class="awards-list">
+                    <div class="award-item">
+                        <span class="award-date">2025</span>
+                        <span class="award-name">Mathematical Contest in Modeling (MCM), Meritorious Winner <a href="paper/2025年美赛（M）.pdf" target="_blank" class="pdf-link">【PDF】</a></span>
+                        <span class="award-org">COMAP</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2023</span>
+                        <span class="award-name">National Mathematical Modeling Competition, Provincial Special Prize</span>
+                        <span class="award-org">Higher Education Press</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2024</span>
+                        <span class="award-name">15th National Mathematical Competition for College Students (Category A), Provincial First Prize</span>
+                        <span class="award-org">Chinese Mathematical Society</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2024</span>
+                        <span class="award-name">14th National Market Research and Analysis Competition, Provincial Second Prize</span>
+                        <span class="award-org">Ministry of Education Statistics Teaching Committee</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2024</span>
+                        <span class="award-name">10th National Statistical Modeling Competition, Provincial Second Prize</span>
+                        <span class="award-org">National Applied Statistics Graduate Education Committee</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2024</span>
+                        <span class="award-name">14th APMCM Asia-Pacific Mathematical Modeling Competition, National Second Prize</span>
+                        <span class="award-org">APMCM Organizing Committee</span>
+                    </div>
+                    
+                    <div class="award-item">
+                        <span class="award-date">2024</span>
+                        <span class="award-name">5th HuaShu Cup National Mathematical Modeling Competition, National Third Prize</span>
+                        <span class="award-org">HuaShu Cup Organizing Committee</span>
+                    </div>
+                </div>
+            </section>
 
-    <!-- 联系方式 -->
-    <section id="contact">
-        <h2>联系方式</h2>
-        <p>电话/微信：15512506753</p>
-        <p>邮箱：<a href="mailto:haoyuntang224@163.com">haoyuntang224@163.com</a></p>
-        <p>GitHub：<a href="https://github.com/HaoyunT">https://github.com/HaoyunT</a></p>
-    </section>
+            <!-- Projects Section -->
+            <section id="projects" class="section">
+                <h2><i class="fas fa-code"></i> Research Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>National Innovation Training Program for College Students</h3>
+                        <p><strong>Passivity Analysis of Spatiotemporal Networks Based on Sampling Control</strong> - Served as project leader, successfully managing the project from proposal to mid-term evaluation, ultimately receiving an excellent rating. Supervised by Prof. Cheng Hu.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Control Theory</span>
+                            <span class="tech-tag">Spatiotemporal Networks</span>
+                            <span class="tech-tag">Passivity Analysis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Super Mario Reinforcement Learning</h3>
+                        <p>Implemented DDQN algorithm with CNN for automatic game completion in Super Mario Bros environment. Enhanced training stability through soft update strategies and additional reward mechanisms beyond default rewards.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">DDQN</span>
+                            <span class="tech-tag">Reinforcement Learning</span>
+                            <span class="tech-tag">CNN</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HaoyunT/HaoyunT.github.io/tree/main/DDQN" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Olympic Medal Prediction Model</h3>
+                        <p>Combined LSTM with Bayesian Monte Carlo Dropout for medal distribution interval prediction, built XGBoost-based median prediction models, and evaluated countries' "0-to-1 breakthrough" possibilities and coach impact through differential modeling.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">LSTM</span>
+                            <span class="tech-tag">XGBoost</span>
+                            <span class="tech-tag">Bayesian Methods</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/SunSeaLucky/2025-MCM-ICM" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>MALFAC Multi-Agent Interception System</h3>
+                        <p>Deep reinforcement learning-based multi-agent target interception system featuring Direction-Assisted Actor networks and Level-Fusion Pyramid Critic networks, significantly improving collaborative decision-making capabilities with 98.0% success rate in final 50 episodes.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Multi-Agent Systems</span>
+                            <span class="tech-tag">Deep Reinforcement Learning</span>
+                            <span class="tech-tag">Cooperative Control</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/HaoyunT/MALFAC" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i>
+                                View Code
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Reinforcement Learning Hub</h3>
+                        <p>A comprehensive educational website for reinforcement learning, featuring theoretical foundations, algorithm implementations, curated learning resources, and personal paper reading notes to provide systematic learning pathways for students and researchers.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Reinforcement Learning</span>
+                            <span class="tech-tag">Educational Platform</span>
+                            <span class="tech-tag">Knowledge Sharing</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://haoyunt.github.io/RL-Learning/" target="_blank" class="project-link">
+                                <i class="fas fa-globe"></i>
+                                View Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 唐浩云</p>
-    </footer>
+        <footer class="footer">
+            <div class="footer-content">
+                <p>© 2025 Haoyun Tang. All rights reserved.</p>
+                <div class="visitor-counter">
+                    <p>Page Views: <span id="page-views">Loading...</span> | Today's Visitors: <span id="today-visitors">Loading...</span></p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
