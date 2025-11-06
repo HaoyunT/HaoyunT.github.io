@@ -367,53 +367,7 @@ document.head.appendChild(enhancedStyle);
 // Initialize enhanced animations
 addEnhancedAnimations();
 
-// Theme Toggle Functionality
-function initThemeToggle() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = themeToggle.querySelector('i');
-    
-    // Debug: Check if elements are found
-    if (!themeToggle) {
-        console.error('Theme toggle button not found!');
-        return;
-    }
-    
-    if (!themeIcon) {
-        console.error('Theme icon not found!');
-        return;
-    }
-    
-    // Check for saved theme preference or default to light mode
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    console.log('Initializing theme:', savedTheme);
-    
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    updateThemeIcon(savedTheme);
-    
-    themeToggle.addEventListener('click', (e) => {
-        e.preventDefault();
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
-        console.log('Switching theme from', currentTheme, 'to', newTheme);
-        
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        updateThemeIcon(newTheme);
-    });
-    
-    function updateThemeIcon(theme) {
-        if (theme === 'dark') {
-            themeIcon.className = 'fas fa-sun';
-        } else {
-            themeIcon.className = 'fas fa-moon';
-        }
-        console.log('Updated theme icon for:', theme);
-    }
-}
 
-// Initialize theme toggle
-initThemeToggle();
 
 // Email copy functionality with enhanced feedback
 function copyEmail(event) {
