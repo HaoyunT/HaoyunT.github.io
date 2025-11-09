@@ -367,6 +367,17 @@ document.head.appendChild(enhancedStyle);
 // Initialize enhanced animations
 addEnhancedAnimations();
 
+// Auto-update footer last updated text if element exists
+(() => {
+    const footerText = document.querySelector('#footer-text p');
+    if (footerText) {
+        const now = new Date();
+        const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        const formatted = `${monthNames[now.getMonth()]} ${now.getFullYear()}`;
+        footerText.innerHTML = `© ${now.getFullYear()} Haoyun Tang | Last updated: ${formatted}`;
+    }
+})();
+
 
 
 // Email copy functionality with enhanced feedback
