@@ -787,9 +787,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .project-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
-    border-color: rgba(102, 126, 234, 0.3);
+    /* removed translate/scale to disable hover 'shake' effect */
+    box-shadow: 0 12px 30px rgba(102, 126, 234, 0.12);
+    border-color: rgba(102, 126, 234, 0.18);
 }
 
 .project-card h3 {
@@ -1347,6 +1347,121 @@ nav a:hover {
     color: var(--text-secondary);
     line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* Awards — academic, minimal style */
+.award-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.award-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eef1f4;
+}
+
+.award-meta {
+    max-width: calc(100% - 100px);
+}
+
+.award-meta strong {
+    display: block;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-size: 1.02rem;
+}
+
+.award-sub {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+    margin-top: 6px;
+}
+
+.award-year {
+    color: var(--text-light);
+    font-weight: 600;
+    min-width: 80px;
+    text-align: right;
+}
+
+@media (max-width: 720px) {
+    .award-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .award-year {
+        text-align: left;
+        margin-top: 6px;
+    }
+}
+
+/* Muted/gray variant for certain awards */
+.award-item.muted .award-meta strong {
+    color: #666666;
+}
+
+.award-item.muted .award-sub {
+    color: #8a8a8a;
+}
+
+.award-item.muted .award-year {
+    color: #8a8a8a;
+}
+
+/* Featured paper card style (larger thumbnail + prominent title) */
+.paper-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 2px 12px var(--shadow-color);
+    border: 1px solid var(--border-color);
+    transition: box-shadow 0.25s ease;
+}
+
+.paper-item:hover {
+    box-shadow: 0 6px 30px rgba(0,0,0,0.08);
+}
+
+.paper-logo {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    flex-shrink: 0;
+}
+
+.paper-item .xp-org {
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
+.paper-item .xp-desc {
+    font-size: 0.97rem;
+}
+
+@media (max-width: 768px) {
+    .paper-item {
+        flex-direction: column;
+        text-align: left;
+        gap: 12px;
+    }
+
+    .paper-logo {
+        width: 100%;
+        height: auto;
+        max-height: 260px;
+    }
 }
 
 /* Mobile responsiveness for experience items */
