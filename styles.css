@@ -7,6 +7,18 @@
 
 :root {
 
+    /* Theme tokens (used via var(--...)) */
+    --bg-hero: #ffffff;
+    --bg-card: #ffffff;
+    --bg-secondary: #ffffff;
+
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
+    --text-light: #9ca3af;
+
+    --border-color: #e5e7eb;
+    --shadow-color: rgba(0, 0, 0, 0.06);
+}
 
 /* Layout and Profile Sidebar */
 .layout-wrapper {
@@ -293,7 +305,6 @@
     .profile-social-list a {
         justify-content: center;
     }
-}
 }
 
 .section h2::after {
