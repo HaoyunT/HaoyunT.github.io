@@ -139,7 +139,7 @@
             <p>
                 I will join the 
                 <a href="http://www.ia.cas.cn/" target="_blank" rel="noopener" style="color: #1e40af;">Institute of Automation, Chinese Academy of Sciences (CASIA)</a> (中科院自动化所) 
-                as a research intern in December 2025, working on multi-agent reinforcement learning under the supervision of Prof. Zhiqiang Pu and Prof. Tenghai Qiu.
+                as a research intern from Nov 2025 to Feb 2026, working on multi-agent reinforcement learning under the supervision of Prof. Zhiqiang Pu and Prof. Tenghai Qiu.
                 I am passionate about academic research and committed to contributing to the intersection of control systems and artificial intelligence.
             </p>
 
@@ -241,7 +241,7 @@
                     <div class="xp-meta">
                         <div class="xp-top">
                             <span class="xp-org">Institute of Automation, Chinese Academy of Sciences</span>
-                            <span class="xp-time">2025.11 – Present</span>
+                            <span class="xp-time">2025.11 – 2026.02</span>
                         </div>
                         <div class="xp-sub">
                             <span class="xp-role">Research Intern (On-site)</span>
@@ -297,59 +297,92 @@
             </ul>
 
             <h2 id="projects">Selected Projects</h2>
-            <ul style="list-style: none; padding-left: 0;">
-                <li style="margin-bottom: 14px; padding: 6px 0; background: transparent; border: none; border-radius: 0;">
-                    <p style="margin: 0;">
-                    <span style="font-size: 1.05em; font-weight: 500; color: #111827;">MALFAC Multi-Agent Interception System</span>
-                    <span style="margin-left: 10px; font-size: 0.95em;">[<a href="https://github.com/HaoyunT/MALFAC">GitHub</a>]</span>
-                    <br />
-                    <span style="color: #555; font-size: 0.95em;">Research Project</span> <br />
-                    <i style="color: #666;">Direction-Assisted Actor & Level-Fusion Pyramid Critic</i> <br />
-                    <span style="margin-top: 6px; display: inline-block;">
-                    Developed a multi-agent reinforcement learning system for target interception tasks featuring Direction-Assisted Actor networks and Level-Fusion Pyramid Critic architectures. Achieved 98.0% success rate in final 50 episodes through iterative training and algorithm refinement.
-                    </span>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>
+                        <a href="https://github.com/HaoyunT/Road2Gen-Drive" target="_blank" rel="noopener">Road2Gen-Drive (MetaDrive IL+RL / GAIL)</a>
+                    </h3>
+                    <p><i>Imitation Learning + Reinforcement Learning, GAIL, Generalization Evaluation</i></p>
+                    <p>
+                        Built end-to-end autonomous driving experiments in MetaDrive with two independent pipelines: (1) IL+RL (Behavior Cloning pretraining + PPO fine-tuning) for stable driving, and (2) GAIL for adversarial imitation learning and generalization evaluation across unseen scenarios.
                     </p>
-                </li>
+                    <div class="project-tech">
+                        <span class="tech-tag">MetaDrive</span>
+                        <span class="tech-tag">BC</span>
+                        <span class="tech-tag">PPO</span>
+                        <span class="tech-tag">GAIL</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://github.com/HaoyunT/Road2Gen-Drive" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <div class="project-preview">
+                        <img src="./images/自动驾驶照片0.png" alt="Road2Gen-Drive demo" loading="lazy" decoding="async" />
+                    </div>
+                </div>
 
-                <li style="margin-bottom: 14px; padding: 6px 0; background: transparent; border: none; border-radius: 0;">
-                    <p style="margin: 0;">
-                    <span style="font-size: 1.05em; font-weight: 500; color: #111827;">Reinforcement Learning Hub</span>
-                    <span style="margin-left: 10px; font-size: 0.95em;">[<a href="https://haoyunt.github.io/RL-Learning/">Website</a>]</span>
-                    <br />
-                    <span style="color: #555; font-size: 0.95em;">Personal Project</span> <br />
-                    <i style="color: #666;">Educational Platform for Reinforcement Learning</i> <br />
-                    <span style="margin-top: 6px; display: inline-block;">
-                    Created an educational website for reinforcement learning featuring theoretical foundations, algorithm implementations, and curated learning resources. Includes personal paper reading notes, code examples, and systematic learning materials.
-                    </span>
+                <div class="project-card">
+                    <h3>
+                        <a href="https://haoyunt.github.io/RL-Learning/" target="_blank" rel="noopener">Reinforcement Learning Hub</a>
+                    </h3>
+                    <p><i>Educational Platform for Reinforcement Learning</i></p>
+                    <p>
+                        Created an educational website for reinforcement learning featuring theoretical foundations, algorithm implementations, and curated learning resources. Includes personal paper reading notes, code examples, and systematic learning materials.
                     </p>
-                </li>
+                    <div class="project-tech">
+                        <span class="tech-tag">Notes</span>
+                        <span class="tech-tag">Algorithms</span>
+                        <span class="tech-tag">Resources</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://haoyunt.github.io/RL-Learning/" target="_blank" rel="noopener">Website</a>
+                    </div>
+                    <div class="project-preview">
+                        <img src="./images/强化学习网站图片.png" alt="Reinforcement Learning Hub preview" loading="lazy" decoding="async" />
+                    </div>
+                </div>
 
-                <li style="margin-bottom: 14px; padding: 6px 0; background: transparent; border: none; border-radius: 0;">
-                    <p style="margin: 0;">
-                    <span style="font-size: 1.05em; font-weight: 500; color: #111827;">StarCraft II Multi-Agent Reinforcement Learning</span>
-                    <span style="margin-left: 10px; font-size: 0.95em;">[<a href="https://github.com/HaoyunT/StarCraft-II">GitHub</a>]</span>
-                    <br />
-                    <span style="color: #555; font-size: 0.95em;">Individual Project</span> <br />
-                    <i style="color: #666;">Multi-Agent Reinforcement Learning in Real-Time Strategy Game</i> <br />
-                    <span style="margin-top: 6px; display: inline-block;">
-                    Implemented multi-agent reinforcement learning algorithms for StarCraft II using PySC2 environment. Developed coordinated strategies for multiple units, explored swarm intelligence behaviors, and applied intelligent game theory concepts in real-time strategy scenarios.
-                    </span>
+                <div class="project-card">
+                    <h3>
+                        <a href="https://github.com/HaoyunT/StarCraft-II" target="_blank" rel="noopener">StarCraft II Multi-Agent Reinforcement Learning</a>
+                    </h3>
+                    <p><i>Multi-Agent Reinforcement Learning in Real-Time Strategy Game</i></p>
+                    <p>
+                        Implemented multi-agent reinforcement learning algorithms for StarCraft II using PySC2 environment. Developed coordinated strategies for multiple units, explored swarm intelligence behaviors, and applied intelligent game theory concepts in real-time strategy scenarios.
                     </p>
-                </li>
-                
-                <li style="margin-bottom: 14px; padding: 6px 0; background: transparent; border: none; border-radius: 0;">
-                    <p style="margin: 0;">
-                    <span style="font-size: 1.05em; font-weight: 500; color: #111827;">Multi-UAV Collaborative Surrounding (MAPPO + AirSim)</span>
-                    <span style="margin-left: 10px; font-size: 0.95em;">[<a href="https://github.com/HaoyunT/rl_aisim_mappo">GitHub</a>]</span>
-                    <br />
-                    <span style="color: #555; font-size: 0.95em;">Research Project | Individual / Lab</span> <br />
-                    <i style="color: #666;">MAPPO, Curriculum Learning, AirSim</i> <br />
-                    <span style="margin-top: 6px; display: inline-block;">
-                    Implemented a 3v1 multi-UAV cooperative surrounding environment in AirSim and a MAPPO-based training pipeline. Features include a custom Gym environment (`drone_surround_env.py`), 6-stage curriculum learning, carefully designed reward functions (ring and angle-based), training & evaluation scripts, and visualization tools for real-time markers. Achieved stable surrounding behaviors up to Stage 4 with saved model checkpoints.
-                    </span>
+                    <div class="project-tech">
+                        <span class="tech-tag">PySC2</span>
+                        <span class="tech-tag">MARL</span>
+                        <span class="tech-tag">Coordination</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://github.com/HaoyunT/StarCraft-II" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <div class="project-preview">
+                        <img src="./images/星际争霸图片.png" alt="StarCraft II MARL preview" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>
+                        <a href="https://github.com/HaoyunT/rl_aisim_mappo" target="_blank" rel="noopener">Multi-UAV Collaborative Surrounding (MAPPO + AirSim)</a>
+                    </h3>
+                    <p><i>MAPPO, Curriculum Learning, AirSim</i></p>
+                    <p>
+                        Implemented a 3v1 multi-UAV cooperative surrounding environment in AirSim and a MAPPO-based training pipeline. Features include a custom Gym environment (`drone_surround_env.py`), 6-stage curriculum learning, carefully designed reward functions (ring and angle-based), training & evaluation scripts, and visualization tools for real-time markers. Achieved stable surrounding behaviors up to Stage 4 with saved model checkpoints.
                     </p>
-                </li>
-            </ul>
+                    <div class="project-tech">
+                        <span class="tech-tag">AirSim</span>
+                        <span class="tech-tag">MAPPO</span>
+                        <span class="tech-tag">Curriculum</span>
+                    </div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://github.com/HaoyunT/rl_aisim_mappo" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                    <div class="project-preview">
+                        <img src="./images/airsim图片.png" alt="AirSim MAPPO project preview" loading="lazy" decoding="async" />
+                    </div>
+                </div>
+            </div>
 
             <h2 id="hobbies">Hobbies & Interests</h2>
             <ul style="list-style: none; padding-left: 0;">
@@ -368,6 +401,10 @@
                 <li style="margin-bottom: 8px;">
                      🏸 <b>Badminton</b>: <span style="color: #444;">Enjoy playing badminton regularly.</span>
                 </li>
+
+                 <li style="margin-bottom: 8px;">
+                     🎾 <b>Tennis</b>: <span style="color: #444;">Currently learning</span>
+                 </li>
                 
                 <li style="margin-bottom: 8px;">
                      🏊 <b>Swimming</b>: <span style="color: #444;">Recreational swimmer.</span>
