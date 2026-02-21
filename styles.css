@@ -1,12 +1,10 @@
 .project-img-fixed {
-    width: 220px;
+    width: 100%;
     height: 140px;
     object-fit: contain;
-    object-position: center;
-    display: block;
-    margin: 0 auto;
     border-radius: 6px;
     border: 1px solid var(--border-color);
+    display: block;
     background: var(--bg-secondary);
 }
 /* Reset and Base Styles */
@@ -627,7 +625,7 @@
     display: inline-flex;
     align-items: center;
     text-decoration: none;
-    color: #dc3545;
+    color: #1e40af;
     font-weight: 600;
     font-size: 0.8em;
     padding: 0.25rem 0.5rem;
@@ -861,10 +859,13 @@
     list-style: none;
     padding-left: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .project-item {
-    margin-bottom: 16px;
+    margin-bottom: 0;
     padding: 4px 0;
 }
 
@@ -875,8 +876,11 @@
 }
 
 .project-thumb {
-    flex: 0 0 36%;
-    max-width: 360px;
+    flex: 0 0 220px;
+    max-width: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .project-thumb img {
@@ -885,6 +889,18 @@
     display: block;
     border-radius: 6px;
     border: 1px solid var(--border-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* 微调：将第二个项目的图片向上移动一点点以修正视觉对齐 */
+.project-list > .project-item:nth-child(2) .project-thumb img {
+    transform: translateY(-10px);
+}
+
+/* 微调：将第三个项目的图片向上移动一点点以修正视觉对齐 */
+.project-list > .project-item:nth-child(3) .project-thumb img {
+    transform: translateY(-4px);
 }
 
 .project-info {
