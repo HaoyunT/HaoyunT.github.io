@@ -1,3 +1,14 @@
+.project-img-fixed {
+    width: 220px;
+    height: 140px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+}
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -846,28 +857,142 @@
 }
 
 /* Projects */
+.project-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.project-item {
+    margin-bottom: 16px;
+    padding: 4px 0;
+}
+
+.project-row {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.project-thumb {
+    flex: 0 0 36%;
+    max-width: 360px;
+}
+
+.project-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+.project-info {
+    flex: 1 1 64%;
+    min-width: 0;
+}
+
+.project-title {
+    font-size: 1.05em;
+    font-weight: 600;
+    color: #003366;
+    text-decoration: none;
+}
+
+.project-title:hover {
+    text-decoration: underline;
+}
+
+.project-links-inline {
+    margin-left: 10px;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.project-keywords {
+    display: block;
+    margin-top: 8px;
+    color: var(--text-secondary);
+}
+
+.project-desc {
+    display: block;
+    margin-top: 6px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+@media (max-width: 720px) {
+    .project-row {
+        flex-direction: column;
+    }
+
+    .project-thumb {
+        flex: 0 0 auto;
+        max-width: none;
+        width: 100%;
+    }
+}
+
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
     gap: 1.25rem;
     align-items: start;
 }
 
+.project-split {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+}
+
+.project-media {
+    flex: 0 0 320px;
+}
+
+.project-body {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+.project-body h3 {
+    margin-top: 0;
+}
+
 .project-preview {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: 1fr;
     gap: 12px;
-    margin-top: 10px;
+    margin-top: 0;
 }
 
 .project-preview img {
     display: block;
     width: 100%;
-    height: 140px;
+    height: 210px;
     object-fit: contain;
+    object-position: center;
+    background: var(--bg-secondary);
+    padding: 6px;
     border-radius: 6px;
     border: 1px solid var(--border-color);
     box-shadow: 0 1px 8px var(--shadow-color);
+}
+
+@media (max-width: 720px) {
+    .project-split {
+        flex-direction: column;
+    }
+
+    .project-media {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .project-preview img {
+        height: 240px;
+    }
 }
 
 .project-card {
