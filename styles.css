@@ -863,8 +863,8 @@
 .project-preview img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
+    height: 140px;
+    object-fit: contain;
     border-radius: 6px;
     border: 1px solid var(--border-color);
     box-shadow: 0 1px 8px var(--shadow-color);
