@@ -76,42 +76,6 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveNav);
     updateActiveNav(); // Initial call
 
-    // Visitor counter (simulated)
-    function updateVisitorCounter() {
-        // This is a simple simulation. In a real application, you'd use a backend service
-        const pageViews = localStorage.getItem('pageViews') || 0;
-        const todayVisitors = localStorage.getItem('todayVisitors') || 0;
-        
-        // Increment counters
-        localStorage.setItem('pageViews', parseInt(pageViews) + 1);
-        
-        // Check if it's a new day
-        const today = new Date().toDateString();
-        const lastVisit = localStorage.getItem('lastVisit');
-        
-        if (lastVisit !== today) {
-            localStorage.setItem('todayVisitors', 1);
-            localStorage.setItem('lastVisit', today);
-        } else {
-            localStorage.setItem('todayVisitors', parseInt(todayVisitors) + 1);
-        }
-        
-        // Update display
-        const pageViewsElement = document.getElementById('page-views');
-        const todayVisitorsElement = document.getElementById('today-visitors');
-        
-        if (pageViewsElement) {
-            pageViewsElement.textContent = localStorage.getItem('pageViews');
-        }
-        
-        if (todayVisitorsElement) {
-            todayVisitorsElement.textContent = localStorage.getItem('todayVisitors');
-        }
-    }
-
-    // Initialize visitor counter
-    setTimeout(updateVisitorCounter, 1000);
-
     // Add hover effects to project cards
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach(card => {

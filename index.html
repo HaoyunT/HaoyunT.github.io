@@ -36,6 +36,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
+    <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
     
     <!-- JSON-LD structured data for search engines -->
     <script type="application/ld+json">
@@ -444,7 +445,7 @@
                     
 
                     <div id="page-stats" style="margin-top:12px; color:#666; font-size:0.95em;">
-                        This page has been viewed <span id="stat-views">0</span> times by <span id="stat-unique">0</span> visitors totally, and <span id="stat-today">0</span> visitors today.
+                        This page has been viewed <span id="busuanzi_page_pv">Loading...</span> times. Total visitors: <span id="busuanzi_site_uv">Loading...</span>. Today's visitors: <span id="busuanzi_today_uv">Loading...</span>.
                     </div>
                 </div>
             </div>
@@ -456,7 +457,7 @@
         ↑
     </a>
 
-    <script src="script.js?v=20260111"></script>
+    <script src="script.js?v=20260517"></script>
 
     <script>
     // Back to Top Button
@@ -485,54 +486,6 @@
     this.removeAttribute('aria-live');
     });
 
-    // Simple page view / visitor counters using localStorage (works per-browser)
-    (function(){
-        try{
-            const todayStr = new Date().toISOString().slice(0,10).replace(/-/g,'');
-            const totalKey = 'haoyunt_total_views_v1';
-            const uniqueKey = 'haoyunt_unique_visitors_v1';
-            const todayIdsKey = 'haoyunt_today_'+ todayStr + '_ids_v1';
-            const visitorIdKey = 'haoyunt_visitor_id_v1';
-
-            let visitorId = localStorage.getItem(visitorIdKey);
-            let isNewVisitor = false;
-            if(!visitorId){
-                visitorId = Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-                localStorage.setItem(visitorIdKey, visitorId);
-                isNewVisitor = true;
-            }
-
-            // increment total views
-            let total = parseInt(localStorage.getItem(totalKey) || '0', 10);
-            total += 1;
-            localStorage.setItem(totalKey, total);
-
-            // increment unique visitors (per-browser approximation)
-            if(isNewVisitor){
-                let uniq = parseInt(localStorage.getItem(uniqueKey) || '0', 10);
-                uniq += 1;
-                localStorage.setItem(uniqueKey, uniq);
-            }
-
-            // today's visitors (per-browser set)
-            let todayIds = JSON.parse(localStorage.getItem(todayIdsKey) || '[]');
-            if(!todayIds.includes(visitorId)){
-                todayIds.push(visitorId);
-                localStorage.setItem(todayIdsKey, JSON.stringify(todayIds));
-            }
-
-            // update UI
-            const elViews = document.getElementById('stat-views');
-            const elUnique = document.getElementById('stat-unique');
-            const elToday = document.getElementById('stat-today');
-            if(elViews) elViews.textContent = total;
-            if(elUnique) elUnique.textContent = parseInt(localStorage.getItem(uniqueKey) || '0', 10);
-            if(elToday) elToday.textContent = (todayIds && todayIds.length) ? todayIds.length : 0;
-        }catch(e){
-            // ignore storage errors
-            console.warn('Page stats error', e);
-        }
-    })();
     </script>
 </body>
 </html>
