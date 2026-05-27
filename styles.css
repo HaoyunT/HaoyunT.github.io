@@ -1543,10 +1543,24 @@ nav a:hover {
 .xp-logo {
     width: 60px;
     height: 60px;
-    object-fit: cover;
-    border-radius: 8px;
-    border: none;
+    object-fit: contain;
+    border-radius: 12px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    background: #ffffff;
+    padding: 6px;
     flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.xp-logo-fill {
+    object-fit: cover;
+    padding: 0;
+    background: transparent;
+    border: none;
+}
+
+.xp-logo-school {
+    padding: 2px;
 }
 
 .xp-meta {
