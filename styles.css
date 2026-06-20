@@ -107,6 +107,17 @@
     margin-bottom: 15px;
 }
 
+.profile-motto {
+    color: #555;
+    font-size: 0.88rem;
+    font-style: italic;
+    line-height: 1.45;
+    border-left: 3px solid #003366;
+    padding: 4px 0 4px 10px;
+    margin: 0 0 15px 0;
+    text-align: left;
+}
+
 .profile-info-list,
 .profile-social-list {
     list-style: none;
