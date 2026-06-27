@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
             'January', 'February', 'March', 'April', 'May', 'June',
             'July', 'August', 'September', 'October', 'November', 'December'
         ];
-        footerText.textContent = `© ${now.getFullYear()} Haoyun Tang | Last updated: ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
+        footerText.textContent = `© ${now.getFullYear()} Adrian Tang | Last updated: ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
     }
 });
 
