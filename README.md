@@ -1,8 +1,7 @@
-# 唐浩云的个人学术主页
+# Haoyun Tang | Academic Homepage
 
-## 🎓 个人信息
+Personal academic homepage featuring my research, publications, experience, awards, and projects.
 
-- **姓名**: 唐浩云 (Haoyun Tang)
-- **邮箱**: haoyuntang224@163.com
-- **ORCID**: [0009-0001-6493-2806](https://orcid.org/0009-0001-6493-2806)
-  这里是唐浩云的学术主页
+Live site: [haoyunt.github.io](https://haoyunt.github.io/)
+
+Built as a lightweight static site with HTML, CSS, and JavaScript.
