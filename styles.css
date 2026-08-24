@@ -1563,12 +1563,10 @@ nav a:hover {
     box-sizing: border-box;
 }
 
-.xp-logo-wide {
-    width: 116px;
-    height: 44px;
-    border-radius: 8px;
-    padding: 4px;
-    align-self: center;
+.xp-logo-square {
+    object-fit: contain;
+    object-position: center;
+    padding: 3px;
 }
 
 .xp-logo-fill {
