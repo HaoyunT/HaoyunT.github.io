@@ -2583,6 +2583,38 @@ body {
     color: #7f4750 !important;
 }
 
+.main-content-area .paper-action-alphaxiv {
+    border-color: #d2d8dc;
+    background: #f7f8f9;
+    color: #495861 !important;
+}
+
+.main-content-area .paper-action-alphaxiv:hover,
+.main-content-area .paper-action-alphaxiv:focus-visible {
+    border-color: #aeb9c0;
+    background: #f0f3f5;
+    color: #25343d !important;
+}
+
+.alphaxiv-label {
+    font-weight: 700;
+}
+
+.alphaxiv-like {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding-left: 0.38rem;
+    border-left: 1px solid #c9d1d6;
+    color: #6a7881;
+    font-variant-numeric: tabular-nums;
+}
+
+.main-content-area .paper-action-alphaxiv:hover .alphaxiv-like,
+.main-content-area .paper-action-alphaxiv:focus-visible .alphaxiv-like {
+    color: inherit;
+}
+
 .main-content-area .paper-action-code {
     border-color: #cfd5da;
     background: #f4f5f6;
