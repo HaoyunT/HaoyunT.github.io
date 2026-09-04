@@ -201,15 +201,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    const footerText = document.querySelector('#footer-text p');
-    if (footerText) {
-        const now = new Date();
-        const monthNames = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        footerText.textContent = `© ${now.getFullYear()} Haoyun Tang | Last updated: ${monthNames[now.getMonth()]} ${now.getFullYear()}`;
-    }
 });
 
 function copyText(text, message) {
