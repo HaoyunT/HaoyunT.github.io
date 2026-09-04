@@ -187,6 +187,65 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     });
 
+    const alphaXivLinks = Array.from(document.querySelectorAll('[data-alphaxiv-paper]'))
+        .filter(link => link.dataset.alphaxivPaper && link.querySelector('.alphaxiv-like-count'));
+
+    const fetchWithTimeout = (url, timeoutMs = 8000) => {
+        const controller = new AbortController();
+        const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+        return fetch(url, {
+            headers: { Accept: 'application/json' },
+            cache: 'no-store',
+            signal: controller.signal
+        }).finally(() => window.clearTimeout(timeout));
+    };
+
+    const updateAlphaXivLike = async link => {
+        const paperId = link.dataset.alphaxivPaper;
+        const count = link.querySelector('.alphaxiv-like-count');
+        const encodedPaperId = encodeURIComponent(paperId);
+        const cacheBuster = `?homepage_timestamp=${Date.now()}`;
+        const endpoints = [
+            `https://api.alphaxiv.org/papers/v3/legacy/${encodedPaperId}${cacheBuster}`,
+            `https://proxy.cors.sh/https://api.alphaxiv.org/papers/v3/legacy/${encodedPaperId}${cacheBuster}`
+        ];
+
+        for (const endpoint of endpoints) {
+            try {
+                const response = await fetchWithTimeout(endpoint);
+                if (!response.ok) {
+                    continue;
+                }
+
+                const payload = await response.json();
+                const likeCount = payload?.paper?.paper_group?.metrics?.public_total_votes;
+                if (!Number.isInteger(likeCount) || likeCount < 0) {
+                    continue;
+                }
+
+                count.textContent = String(likeCount);
+                const label = `${likeCount} ${likeCount === 1 ? 'like' : 'likes'} on alphaXiv`;
+                link.setAttribute('aria-label', label);
+                link.title = label;
+                return;
+            } catch {
+                // Keep the server-rendered fallback when alphaXiv is unavailable.
+            }
+        }
+    };
+
+    const refreshAlphaXivLikes = () => {
+        if (document.visibilityState === 'hidden') {
+            return;
+        }
+        alphaXivLinks.forEach(link => updateAlphaXivLike(link));
+    };
+
+    if (alphaXivLinks.length > 0) {
+        refreshAlphaXivLikes();
+        window.setInterval(refreshAlphaXivLikes, 5 * 60 * 1000);
+    }
+
     document.addEventListener('keydown', function(event) {
         if (event.key !== 'Escape') {
             return;
