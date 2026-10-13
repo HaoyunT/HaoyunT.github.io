@@ -1,0 +1,39 @@
+name: Update alphaXiv like counts
+
+on:
+  schedule:
+    - cron: '23 4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: alphaxiv-likes
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Refresh like counts in index.html
+        run: python3 scripts/update_alphaxiv_likes.py
+
+      - name: Commit and push if changed
+        run: |
+          if git diff --quiet -- index.html; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          git commit -m 'chore: refresh alphaXiv like counts' -m 'Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>'
+          git pull --rebase --autostash origin main
+          git push

@@ -254,7 +254,7 @@
                         <span class="paper-venue">NeurIPS 2026; arXiv:2605.05951</span>
                         <div class="paper-actions">
                             <a class="paper-action paper-action-arxiv" href="https://arxiv.org/abs/2605.05951" target="_blank" rel="noopener"><i class="ai ai-arxiv" aria-hidden="true"></i> arXiv</a>
-                            <a class="paper-action paper-action-alphaxiv" href="https://www.alphaxiv.org/abs/2605.05951" target="_blank" rel="noopener" data-alphaxiv-paper="2605.05951" aria-label="13 likes on alphaXiv" title="13 likes on alphaXiv"><span class="alphaxiv-label">alphaXiv</span><span class="alphaxiv-like"><i class="far fa-thumbs-up" aria-hidden="true"></i> <span class="alphaxiv-like-count">13</span></span></a>
+                            <a class="paper-action paper-action-alphaxiv" href="https://www.alphaxiv.org/abs/2605.05951" target="_blank" rel="noopener" data-alphaxiv-paper="2605.05951" aria-label="14 likes on alphaXiv" title="14 likes on alphaXiv"><span class="alphaxiv-label">alphaXiv</span><span class="alphaxiv-like"><i class="far fa-thumbs-up" aria-hidden="true"></i> <span class="alphaxiv-like-count">14</span></span></a>
                             <a class="paper-action paper-action-code" href="https://github.com/HaoyunT/HaM_World" target="_blank" rel="noopener" data-github-repo="HaoyunT/HaM_World">
                                 <i class="fab fa-github" aria-hidden="true"></i> Code
                                 <span class="repo-stars" aria-label="8 GitHub stars" title="8 GitHub stars"><i class="fas fa-star" aria-hidden="true"></i><span class="repo-star-count">8</span></span>
@@ -629,5 +629,27 @@
     });
 
     </script>
+
+    <script>
+    // Visitor-counter fallback: if busuanzi has not answered within 3s, stop
+    // showing "Loading..." so a stalled counter never renders as a technical error.
+    if (document.getElementById('page-stats')) {
+        window.setTimeout(function () {
+            var ids = ['busuanzi_page_pv', 'busuanzi_site_uv', 'busuanzi_today_uv'];
+            var pending = ids.filter(function (id) {
+                var el = document.getElementById(id);
+                return el && /^\s*Loading\.\.\.\s*$/.test(el.textContent);
+            });
+            if (pending.length === 0) return;
+            pending.forEach(function (id) {
+                document.getElementById(id).textContent = '—';
+            });
+            var stats = document.getElementById('page-stats');
+            stats.title = 'Visitor statistics are temporarily unavailable.';
+            stats.setAttribute('aria-live', 'polite');
+        }, 3000);
+    }
+    </script>
+
 </body>
 </html>
