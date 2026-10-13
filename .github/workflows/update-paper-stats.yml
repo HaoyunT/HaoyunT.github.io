@@ -1,4 +1,4 @@
-name: Update alphaXiv like counts
+name: Update paper metrics
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: alphaxiv-likes
+  group: paper-stats
   cancel-in-progress: true
 
 jobs:
@@ -22,8 +22,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Refresh like counts in index.html
-        run: python3 scripts/update_alphaxiv_likes.py
+      - name: Refresh counts in index.html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update_paper_stats.py
 
       - name: Commit and push if changed
         run: |
@@ -34,6 +36,6 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add index.html
-          git commit -m 'chore: refresh alphaXiv like counts' -m 'Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>'
+          git commit -m 'chore: refresh paper metrics' -m 'Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>'
           git pull --rebase --autostash origin main
           git push
