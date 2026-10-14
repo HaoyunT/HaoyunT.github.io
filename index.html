@@ -48,7 +48,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&amp;family=Permanent+Marker&amp;family=Source+Sans+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
-    <script src="https://events.vercount.one/js" defer></script>
+    <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
     
     <!-- JSON-LD structured data for search engines -->
     <script type="application/ld+json">
@@ -589,7 +589,7 @@
                     
 
                     <div id="page-stats" style="margin-top:12px; color:#666; font-size:0.95em;">
-                        This page has been viewed <span id="vercount_value_page_pv">Loading...</span> times. Total site views: <span id="vercount_value_site_pv">Loading...</span>. Total site visitors: <span id="vercount_value_site_uv">Loading...</span>.
+                        This page has been viewed <span id="busuanzi_page_pv">Loading...</span> times. Total site visitors: <span id="busuanzi_site_uv">Loading...</span>. Today's site visitors: <span id="busuanzi_today_uv">Loading...</span>.
                     </div>
                 </div>
             </div>
@@ -631,11 +631,11 @@
     </script>
 
     <script>
-    // Visitor-counter fallback: if Vercount has not answered within 3s, stop
+    // Visitor-counter fallback: if busuanzi has not answered within 3s, stop
     // showing "Loading..." so a stalled counter never renders as a technical error.
     if (document.getElementById('page-stats')) {
         window.setTimeout(function () {
-            var ids = ['vercount_value_page_pv', 'vercount_value_site_pv', 'vercount_value_site_uv'];
+            var ids = ['busuanzi_page_pv', 'busuanzi_site_uv', 'busuanzi_today_uv'];
             var pending = ids.filter(function (id) {
                 var el = document.getElementById(id);
                 return el && /^\s*Loading\.\.\.\s*$/.test(el.textContent);
