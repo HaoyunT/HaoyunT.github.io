@@ -48,7 +48,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&amp;family=Permanent+Marker&amp;family=Source+Sans+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
-    <script src="https://cdn.busuanzi.cc/busuanzi/3.6.9/busuanzi.min.js" defer></script>
     <script src="https://events.vercount.one/js" defer></script>
     
     <!-- JSON-LD structured data for search engines -->
@@ -590,8 +589,7 @@
                     
 
                     <div id="page-stats" style="margin-top:12px; color:#666; font-size:0.95em;">
-                        This page has been viewed <span id="busuanzi_page_pv">—</span> times. Total site visitors: <span id="busuanzi_site_uv">—</span>. Today's site visitors: <span id="busuanzi_today_uv">—</span>.
-                        <span hidden aria-hidden="true"><span id="vercount_value_page_pv"></span><span id="vercount_value_site_pv"></span><span id="vercount_value_site_uv"></span></span>
+                        This page has been viewed <span id="vercount_value_page_pv">Loading...</span> times. Total site views: <span id="vercount_value_site_pv">Loading...</span>. Total site visitors: <span id="vercount_value_site_uv">Loading...</span>.
                     </div>
                 </div>
             </div>
@@ -633,40 +631,24 @@
     </script>
 
     <script>
-    // Visitor counters. busuanzi is primary because it is the only source that
-    // reports today's visitors; Vercount runs alongside as a backup. If
-    // busuanzi has not answered within 6s its page and site figures are filled
-    // from Vercount, and today's visitors fall back to an em dash.
-    (function () {
-        var stats = document.getElementById('page-stats');
-        if (!stats) {
-            return;
-        }
-
-        var usable = function (el) {
-            var v = el ? (el.textContent || '').trim() : '';
-            return v && v !== '0' && v !== '\u2014' && v !== 'Loading...' ? v : '';
-        };
-
+    // Visitor-counter fallback: if Vercount has not answered within 3s, stop
+    // showing "Loading..." so a stalled counter never renders as a technical error.
+    if (document.getElementById('page-stats')) {
         window.setTimeout(function () {
-            [['busuanzi_page_pv', 'vercount_value_page_pv'],
-             ['busuanzi_site_uv', 'vercount_value_site_uv']].forEach(function (pair) {
-                var el = document.getElementById(pair[0]);
-                if (!el || usable(el)) {
-                    return;
-                }
-                var backup = usable(document.getElementById(pair[1]));
-                el.textContent = backup || '\u2014';
+            var ids = ['vercount_value_page_pv', 'vercount_value_site_pv', 'vercount_value_site_uv'];
+            var pending = ids.filter(function (id) {
+                var el = document.getElementById(id);
+                return el && /^\s*Loading\.\.\.\s*$/.test(el.textContent);
             });
-
-            var today = document.getElementById('busuanzi_today_uv');
-            if (today && !/^\d/.test((today.textContent || '').trim())) {
-                today.textContent = '\u2014';
-                stats.title = "Today's visitors are unavailable right now.";
-            }
+            if (pending.length === 0) return;
+            pending.forEach(function (id) {
+                document.getElementById(id).textContent = '—';
+            });
+            var stats = document.getElementById('page-stats');
+            stats.title = 'Visitor statistics are temporarily unavailable.';
             stats.setAttribute('aria-live', 'polite');
-        }, 6000);
-    })();
+        }, 3000);
+    }
     </script>
 
 </body>
