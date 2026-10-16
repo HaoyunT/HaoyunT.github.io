@@ -1,0 +1,4 @@
+# GitHub Pages builds with Jekyll, which skips dot-directories by default.
+# .well-known holds the Vercount domain-verification file.
+include:
+  - .well-known
