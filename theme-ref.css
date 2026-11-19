@@ -1,0 +1,243 @@
+/* Whole-page look modelled on AcadHomepage (thu-wangmx.github.io):
+   fixed masthead, sticky sidebar with round avatar, system sans font,
+   emoji section headings with a hairline rule, logo + text experience entries. */
+
+:root {
+    --ref-text: #494e52;
+    --ref-head: #3d4144;
+    --ref-link: #0066cc;
+    --ref-rule: #e6e8ea;
+    --ref-font: -apple-system, ".SFNSText-Regular", "San Francisco", Roboto, "Segoe UI", "Helvetica Neue", "Lucida Grande", "PingFang SC", Arial, sans-serif;
+}
+
+body {
+    font-family: var(--ref-font) !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: var(--ref-text) !important;
+    background: #fff !important;
+}
+.scroll-progress { display: none !important; }
+
+/* ---------- masthead ---------- */
+.top-nav {
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    height: 52px;
+    margin: 0 !important;
+    padding: 0 max(24px, calc((100vw - 1180px) / 2)) !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff !important;
+    border: none !important;
+    border-bottom: 1px solid #f2f3f3 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    z-index: 1000;
+}
+.masthead-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--ref-head) !important;
+    text-decoration: none !important;
+}
+.top-nav-links { gap: 1.25rem !important; }
+.top-nav-links a {
+    color: var(--ref-head) !important;
+    font-family: var(--ref-font) !important;
+    font-weight: 400 !important;
+    font-size: 0.95rem !important;
+    padding: 2px 0 !important;
+    background: none !important;
+    border-radius: 0 !important;
+    border-bottom: 2px solid transparent !important;
+}
+.top-nav-links a:hover,
+.top-nav-links a.active { color: var(--ref-link) !important; border-bottom-color: var(--ref-link) !important; background: none !important; }
+
+/* ---------- layout ---------- */
+.layout-wrapper {
+    max-width: 1180px !important;
+    margin: 0 auto !important;
+    padding: 84px 24px 48px !important;
+    display: grid !important;
+    grid-template-columns: 210px minmax(0, 1fr) !important;
+    gap: 52px !important;
+    align-items: start;
+}
+.main-content-area { max-width: 820px; padding: 0 !important; border: none !important; }
+.welcome-intro { display: none !important; }
+
+/* ---------- sidebar ---------- */
+.sidebar {
+    position: sticky !important;
+    top: 80px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    text-align: left !important;
+}
+.profile-avatar {
+    width: 150px !important;
+    height: auto !important;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: none !important;
+}
+.profile-avatar img {
+    width: 150px !important;
+    height: 150px !important;
+    object-fit: cover;
+    border-radius: 50% !important;
+    border: 1px solid #c9ced2 !important;
+    padding: 4px;
+    background: #fff;
+    box-shadow: none !important;
+}
+.profile-avatar:hover img { transform: none !important; }
+.profile-name {
+    font-family: var(--ref-font) !important;
+    font-size: 1.12rem !important;
+    font-weight: 700 !important;
+    color: #313639 !important;
+    margin: 0 0 4px !important;
+    text-align: left !important;
+}
+.sidebar .profile-bio { text-align: left !important; font-size: 0.86rem !important; }
+.sidebar .profile-meta { font-size: 0.85rem !important; }
+
+/* ---------- headings ---------- */
+.main-content-area h2 {
+    font-family: var(--ref-font) !important;
+    font-size: 18.75px !important;
+    font-weight: 700 !important;
+    color: var(--ref-head) !important;
+    margin: 2em 0 0.8em !important;
+    padding: 0 0 0.4em !important;
+    border: none !important;
+    border-bottom: 1px solid var(--ref-rule) !important;
+    background: none !important;
+    letter-spacing: 0 !important;
+}
+.main-content-area h2#biography {
+    font-size: 23.4px !important;
+    margin-top: 0 !important;
+}
+.main-content-area h2::before,
+.main-content-area h2::after { content: none !important; display: none !important; }
+.main-content-area h2[id] { scroll-margin-top: 66px; }
+
+/* ---------- text and links ---------- */
+.main-content-area a {
+    color: var(--ref-link) !important;
+    font-weight: 700;
+    text-decoration: none !important;
+    background-image: none !important;
+}
+.main-content-area a:hover { text-decoration: underline !important; }
+.main-content-area .publication-list .paper-action,
+.main-content-area .publication-list .paper-action * { font-weight: 500; }
+
+/* ---------- news ---------- */
+.news-list { padding-left: 1.2em !important; list-style: disc !important; }
+.news-list li {
+    display: list-item !important;
+    margin: 0.3em 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+.news-list time { font-weight: 700; color: var(--ref-head); margin-right: 0.3em; min-width: 0 !important; }
+
+/* ---------- experience / education: logo + text, exactly like the reference ---------- */
+.ref-list { list-style: none !important; margin: 0 !important; padding: 0 !important; }
+.ref-xp {
+    display: flex !important;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 0 0 22px !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+}
+.ref-logo {
+    flex: 0 0 60px;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid #eceef0;
+    padding: 4px;
+    box-sizing: border-box;
+}
+.ref-body { min-width: 0; }
+.ref-head { font-size: 18px; line-height: 1.35; color: var(--ref-head); }
+.ref-head strong { font-weight: 700; }
+.ref-date { font-size: 18px; font-style: italic; font-weight: 500; color: var(--ref-head); margin-top: 2px; }
+.ref-body ul { margin: 10px 0 0 !important; padding-left: 1.3em !important; list-style: disc !important; }
+.ref-body ul li { margin: 0.25em 0 !important; padding: 0 !important; font-size: 14px; line-height: 1.5; border: none !important; background: none !important; display: list-item !important; }
+
+/* ---------- awards / skills ---------- */
+.awards-list { padding-left: 1.2em !important; list-style: disc !important; }
+.awards-list li { display: list-item !important; margin: 0.25em 0 !important; padding: 0 !important; border: none !important; background: none !important; }
+.skills-list li { margin: 0.25em 0 !important; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+    .top-nav { padding: 0 14px !important; }
+    .top-nav-links { gap: 0.8rem !important; overflow-x: auto; }
+    .layout-wrapper { grid-template-columns: 1fr !important; gap: 22px !important; padding: 72px 16px 36px !important; }
+    .sidebar { position: static !important; }
+    .masthead-name { display: none; }
+}
+
+/* sidebar bio wraps inside the column */
+.sidebar { min-width: 0; overflow: hidden; }
+.sidebar .profile-bio { white-space: normal !important; overflow-wrap: anywhere; max-width: 100% !important; width: auto !important; }
+/* no venue badge on paper figures (as on the reference page) */
+.publication-list .venue-badge { display: none !important; }
+
+/* ---------- publications: same structure and sizes as the reference ---------- */
+.pub-list { margin-top: 6px; }
+.pub-item { display: flex; align-items: flex-start; gap: 30px; margin-bottom: 32px; }
+.pub-item > img {
+    width: 240px; height: 160px; flex-shrink: 0;
+    object-fit: contain; background: #fff;
+    border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.pub-text { flex: 1; min-width: 0; }
+.pub-title { font-weight: 700; font-size: 1.25em; line-height: 1.3; margin-bottom: 6px; }
+.main-content-area .pub-title a { color: #D9534F !important; text-decoration: none !important; }
+.main-content-area .pub-title a:hover { text-decoration: underline !important; }
+.pub-meta { font-size: 1.05em; line-height: 1.6; }
+.pub-meta b { color: #313639; }
+.pub-note { color: #666; }
+.pub-tldr { margin: 8px 0 0 !important; color: #555; line-height: 1.5; }
+@media (max-width: 700px) {
+    .pub-item { flex-direction: column; gap: 12px; }
+    .pub-item > img { width: 100%; max-width: 360px; height: auto; aspect-ratio: 3 / 2; }
+}
+/* sidebar column width must not exceed the grid track */
+.sidebar { width: auto !important; max-width: 210px !important; }
+.main-content-area .pub-title { color: #D9534F !important; }
+
+/* star / like counters inside the plain-text paper links */
+.pub-meta .repo-stars,
+.pub-meta .alphaxiv-like {
+    display: inline-flex; align-items: center; gap: 3px;
+    margin-left: 3px; padding: 0 6px;
+    border: 1px solid #d6dbe1; border-radius: 9px;
+    font-size: 0.82em; font-weight: 600; line-height: 1.5;
+    color: #57606a; background: #f6f8fa; vertical-align: 1px;
+}
+.pub-meta .repo-stars i { color: #e3b341; }
+.pub-meta .alphaxiv-like i { color: #b31b1b; }
+.ref-mode { font-style: normal; font-weight: 400; color: #6b7177; font-size: 0.82em; }
+/* full (uncropped) figures in a slightly wider box to reduce blank margins */
+.pub-item > img { width: 240px; height: 135px; object-fit: contain; }

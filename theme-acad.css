@@ -92,3 +92,83 @@
     max-height: none !important;
     object-fit: initial !important;
 }
+
+/* ================= AcadHomepage-style page (sidebar, headings, experience, skills) ================= */
+.sidebar .profile-bio {
+    margin: 4px 0 12px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    color: #494e52;
+}
+.sidebar .profile-meta {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.88rem;
+}
+.sidebar .profile-meta li { display: flex; align-items: center; gap: 9px; color: #494e52; margin: 0; padding: 0; }
+.sidebar .profile-meta i { width: 16px; text-align: center; color: #5f6b77; }
+.sidebar .profile-meta a { color: #494e52; text-decoration: none; display: flex; align-items: center; gap: 9px; }
+.sidebar .profile-meta a:hover { color: #1f5fbf; }
+.sidebar .profile-meta a:hover i { color: #1f5fbf; }
+
+/* headings: emoji + plain bold text + bottom rule (no left bar / per-section icon) */
+.main-content-area h2 {
+    padding-left: 0 !important;
+    border-left: none !important;
+    padding-bottom: 0.35em !important;
+    border-bottom: 1px solid #e6e8eb !important;
+    margin-top: 1.9em !important;
+}
+.main-content-area h2::before,
+.main-content-area h2::after { content: none !important; display: none !important; }
+.main-content-area h2#biography { margin-top: 0.4em !important; }
+.main-content-area h2[id] { scroll-margin-top: 20px; }
+.contact-line { margin-top: 0.4em; }
+
+/* compact experience / education entries */
+.xp-compact .xp-item { padding: 0.55em 0 !important; align-items: flex-start; }
+.xp-compact .xp-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; }
+.xp-compact .xp-org { font-weight: 700; }
+.xp-compact .xp-sep { color: #9aa1a8; font-weight: 400; margin: 0 2px; }
+.xp-compact .xp-role { font-weight: 500; }
+.xp-compact .xp-time { white-space: nowrap; font-size: 0.92em; color: #6b7177; }
+.xp-compact .xp-desc { margin-top: 2px; font-size: 0.93em; line-height: 1.5; }
+.xp-compact .xp-mentor-line { color: #5f6b77; }
+
+/* skills */
+.skills-list { padding-left: 1.2em; margin: 0; }
+.skills-list li { margin: 0.3em 0; line-height: 1.55; }
+.main-content-area > p { margin: 0 0 0.75em !important; }
+.main-content-area .scroll-reveal > p { margin: 0 0 0.75em !important; }
+@media (max-width: 850px) {
+    .sidebar .profile-meta { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px 16px; }
+}
+
+/* Uniform 2:1 figure cards: every paper image fits inside the same box (no cropping). */
+.publication-list .publication-media {
+    aspect-ratio: 2 / 1 !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background: #fff !important;
+}
+.publication-list .publication-media img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+}
+
+/* Narrower figure column */
+.publication-list .publication-entry {
+    grid-template-columns: 290px minmax(0, 1fr) !important;
+    gap: 26px !important;
+    margin-bottom: 1.6em !important;
+}
+@media (max-width: 900px) {
+    .publication-list .publication-entry { grid-template-columns: 1fr !important; }
+    .publication-list .publication-media { max-width: 420px; }
+}
