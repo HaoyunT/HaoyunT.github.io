@@ -1,0 +1,94 @@
+/* Publications only: AcadHomepage-style layout
+   (card figure with venue badge on the left; red-brown title, authors,
+   italic venue, links and a short gray summary on the right). */
+
+.publication-list { list-style: none; padding: 0 !important; }
+
+.publication-list .publication-entry {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr) !important;
+    gap: 30px !important;
+    align-items: start;
+    margin: 0 0 2.1em !important;
+    padding: 0 !important;
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.publication-list .publication-media {
+    position: relative;
+    display: block;
+    border-radius: 10px !important;
+    overflow: hidden;
+    background: #fff;
+    padding: 0 !important;
+    line-height: 0;
+    box-shadow: 0 4px 16px rgba(30, 40, 60, 0.13) !important;
+    border: none !important;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.publication-list a.publication-media:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(30, 40, 60, 0.18) !important;
+}
+.publication-list .publication-media img {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+
+.publication-list .venue-badge {
+    position: absolute !important;
+    top: 0 !important; left: 0 !important;
+    z-index: 2;
+    padding: 3px 9px !important;
+    border-radius: 10px 0 8px 0 !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em;
+    color: #fff !important;
+    background: #2f6fd1 !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+.publication-list .venue-badge--conference { background: #c4402f !important; }
+.publication-list .venue-badge--journal { background: #2e8b57 !important; }
+
+.publication-list .publication-content { display: flex; flex-direction: column; gap: 4px; }
+.main-content-area .publication-list .paper-title {
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+    color: #b5482f !important;
+}
+.publication-list .paper-authors { font-size: 0.93rem !important; line-height: 1.5; }
+.publication-list .paper-authors b { color: #1f2328; }
+.publication-list .paper-notes { font-size: 0.8rem !important; color: #8a8f93 !important; }
+.publication-list .paper-venue { font-style: italic; font-size: 0.92rem !important; }
+.publication-list .paper-tldr {
+    margin-top: 4px;
+    font-size: 0.88rem;
+    line-height: 1.55;
+    color: #8a8f93;
+}
+.publication-list .paper-actions { margin-top: 6px !important; }
+
+@media (max-width: 900px) {
+    .publication-list .publication-entry { grid-template-columns: 1fr !important; gap: 14px !important; }
+}
+
+/* Card follows the image's own aspect ratio (no letterbox white space). */
+.publication-list .publication-media {
+    aspect-ratio: auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    display: block !important;
+}
+.publication-list .publication-media img {
+    height: auto !important;
+    max-height: none !important;
+    object-fit: initial !important;
+}
