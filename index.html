@@ -175,13 +175,16 @@
 
             <h2 id="biography">Biography</h2>
             <p>
-                I am an M.S. student in Applied Mathematics at <a href="https://www.xjtu.edu.cn/" target="_blank" rel="noopener">Xi'an Jiaotong University (XJTU)</a>. My research interests include <b>World Action Models</b>, <b>Reinforcement Learning</b>, and <b>Embodied Intelligence</b>.
+                I am an M.S. student in Applied Mathematics at the School of Mathematics and Statistics, <a href="https://www.xjtu.edu.cn/" target="_blank" rel="noopener">Xi'an Jiaotong University (XJTU)</a>. My research interests include <b>World Action Models</b>, <b>Reinforcement Learning</b>, and <b>Embodied Intelligence</b>.
             </p>
             <p>
-                I am currently an independent researcher at the Fangju Research Institute and a research intern at <a href="https://mmlab.hk/" target="_blank" rel="noopener">MMLab, HKU</a> and <a href="https://bda.pku.edu.cn/" target="_blank" rel="noopener">Nexus Lab, PKU</a>. Previously, I interned at <a href="https://www.linkerbot.cn/" target="_blank" rel="noopener">LinkerBot</a>, <a href="https://www.meituan.com/technology" target="_blank" rel="noopener">Meituan</a>, and <a href="http://www.ia.cas.cn/" target="_blank" rel="noopener">CASIA</a>.
+                I have worked on embodied reinforcement learning and world-model navigation at the <a href="http://www.ia.cas.cn/" target="_blank" rel="noopener">Institute of Automation, Chinese Academy of Sciences (CASIA)</a>. At <a href="https://www.meituan.com/technology" target="_blank" rel="noopener">Meituan</a>, I worked on large-scale pretraining for multimodal trajectory generation with Flow Matching, followed by post-training with Energy-Field guidance and reinforcement learning. At <a href="https://www.linkerbot.cn/" target="_blank" rel="noopener">LinkerBot</a>, I worked on DexLeWM post-training to adapt pretrained VLA/WAM capabilities to coordinated dexterous manipulation.
             </p>
             <p>
-                I welcome research discussions and collaboration; feel free to reach me by <a href="mailto:haoyuntang224@163.com">e-mail</a>.
+                I am currently working on autonomous driving safety at <a href="https://mmlab.hk/" target="_blank" rel="noopener">MMLab, The University of Hong Kong</a>, where I study generative world models and counterfactual causal reasoning. I am also an Embodied AI Algorithm Intern at the <a href="https://bda.pku.edu.cn/" target="_blank" rel="noopener">Nexus Lab, Peking University</a>, where I am exploring embodied VLA/WAM and RSI-related research topics for dexterous-hand manipulation.
+            </p>
+            <p>
+                I am interested in building unified world representations for robots. I welcome research discussions and academic collaboration; feel free to reach me by <a href="mailto:haoyuntang224@163.com">e-mail</a>.
             </p>
             <p class="contact-line">WeChat: thy15512506753</p>
             <h2 id="news">News</h2>
@@ -266,34 +269,6 @@
                     </div>
                 </li>
 
-                <li class="publication-entry" id="publication-crashdojo">
-                    <div class="publication-media">
-                        <span class="venue-badge venue-badge--preprint">Under Review</span>
-                        <img src="./images/CrashDojo.webp" alt="CrashDojo framework: select the risk initiator, specify and scale the intervention, and examine the ego planner in closed loop" width="1590" height="583" loading="lazy" decoding="async">
-                    </div>
-                    <div class="publication-content">
-                        <span class="paper-title">CrashDojo: Accident-Grounded World Models as Closed-Loop Safety Examiners for Autonomous Driving Planners</span>
-                        <span class="paper-authors">Bowen Jing*, <b>Haoyun Tang*</b>, Ruiyang Hao, Chenchen Ge, Weitao Zhou, Haibao Yu</span>
-                        <span class="paper-notes">* Equal contribution.</span>
-                        <span class="paper-venue">Under review, 2026</span>
-                        <span class="paper-tldr">Turns accident evidence into explicit actor–mechanism requests and guides a frozen traffic world model to execute them in closed loop, adapting to the ego planner while keeping the intended maneuver and timing.</span>
-                    </div>
-                </li>
-
-                <li class="publication-entry" id="publication-counterscene">
-                    <div class="publication-media">
-                        <span class="venue-badge venue-badge--preprint">Under Review</span>
-                        <img src="./images/CounterScene.webp" alt="CounterScene overview: from a recorded safe interaction, a targeted intervention on one agent produces a safety-critical counterfactual encounter in an interactive world model" width="1543" height="573" loading="lazy" decoding="async">
-                    </div>
-                    <div class="publication-content">
-                        <span class="paper-title">CounterScene: Counterfactual Causal Reasoning in Generative World Models for Safety-Critical Closed-Loop Traffic Scenario Generation</span>
-                        <span class="paper-authors">Bowen Jing*, Ruiyang Hao*, <b>Haoyun Tang</b>, Weitao Zhou, Haibao Yu</span>
-                        <span class="paper-notes">* Equal contribution.</span>
-                        <span class="paper-venue">Under review, 2026</span>
-                        <span class="paper-tldr">Uses the spatial and temporal safety margins of recorded encounters to guide generation: a progressive soft intervention shrinks these margins for one selected agent, while the world model generates the ego and surrounding traffic responses in closed loop.</span>
-                    </div>
-                </li>
-
                 <li class="publication-entry">
                     <a class="publication-media" href="https://arxiv.org/abs/2606.00519" target="_blank" rel="noopener">
                         <span class="venue-badge venue-badge--preprint">arXiv 2026</span>
@@ -320,6 +295,34 @@
   year={2026}
 }</code></pre>
                         </div>
+                    </div>
+                </li>
+
+                <li class="publication-entry" id="publication-crashdojo">
+                    <div class="publication-media">
+                        <span class="venue-badge venue-badge--preprint">Under Review</span>
+                        <img src="./images/CrashDojo.webp" alt="CrashDojo framework: select the risk initiator, specify and scale the intervention, and examine the ego planner in closed loop" width="1590" height="583" loading="lazy" decoding="async">
+                    </div>
+                    <div class="publication-content">
+                        <span class="paper-title">CrashDojo: Accident-Grounded World Models as Closed-Loop Safety Examiners for Autonomous Driving Planners</span>
+                        <span class="paper-authors">Bowen Jing*, <b>Haoyun Tang*</b>, Ruiyang Hao, Chenchen Ge, Weitao Zhou, Haibao Yu</span>
+                        <span class="paper-notes">* Equal contribution.</span>
+                        <span class="paper-venue">Under review, 2026</span>
+                        <span class="paper-tldr">Turns accident evidence into explicit actor–mechanism requests and guides a frozen traffic world model to execute them in closed loop, adapting to the ego planner while keeping the intended maneuver and timing.</span>
+                    </div>
+                </li>
+
+                <li class="publication-entry" id="publication-counterscene">
+                    <div class="publication-media">
+                        <span class="venue-badge venue-badge--preprint">Under Review</span>
+                        <img src="./images/CounterScene.webp" alt="CounterScene overview: from a recorded safe interaction, a targeted intervention on one agent produces a safety-critical counterfactual encounter in an interactive world model" width="1543" height="573" loading="lazy" decoding="async">
+                    </div>
+                    <div class="publication-content">
+                        <span class="paper-title">CounterScene: Counterfactual Causal Reasoning in Generative World Models for Safety-Critical Closed-Loop Traffic Scenario Generation</span>
+                        <span class="paper-authors">Bowen Jing*, Ruiyang Hao*, <b>Haoyun Tang</b>, Weitao Zhou, Haibao Yu</span>
+                        <span class="paper-notes">* Equal contribution.</span>
+                        <span class="paper-venue">Under review, 2026</span>
+                        <span class="paper-tldr">Uses the spatial and temporal safety margins of recorded encounters to guide generation: a progressive soft intervention shrinks these margins for one selected agent, while the world model generates the ego and surrounding traffic responses in closed loop.</span>
                     </div>
                 </li>
 
@@ -365,6 +368,7 @@
                         <span class="paper-authors">Haodong Cui, <b>Haoyun Tang</b>, Mingyu Ma, Cheng Hu†, Tingting Shi</span>
                         <span class="paper-notes">† Corresponding author.</span>
                         <span class="paper-venue">Communications in Nonlinear Science and Numerical Simulation, 2026</span>
+                        <span class="paper-tldr">Spatial sampling control for passivity and synchronization of multiweighted reaction-diffusion neural networks, applied to image encryption.</span>
                         <div class="paper-actions">
                             <a class="paper-action paper-action-pdf" href="1-s2.0-S1007570426000298-main%20(1)%20(1).pdf" target="_blank" rel="noopener"><i class="far fa-file-pdf" aria-hidden="true"></i> PDF</a>
                             <a class="paper-action paper-action-doi" href="https://doi.org/10.1016/j.cnsns.2026.109666" target="_blank" rel="noopener"><i class="fas fa-link" aria-hidden="true"></i> DOI</a>
@@ -395,6 +399,7 @@
                         <span class="paper-authors"><b>Haoyun Tang</b>, Haodong Cui, Mingyu Ma, Cheng Hu†, Tingting Shi</span>
                         <span class="paper-notes">† Corresponding author.</span>
                         <span class="paper-venue">Chinese Intelligent Systems Conference (CISC 2025), 2026</span>
+                        <span class="paper-tldr">Adaptive spatial sampling control for passivity-based synchronization of multi-weighted spatiotemporal neural networks.</span>
                         <div class="paper-actions">
                             <a class="paper-action paper-action-pdf" href="paper/论文-2.pdf" target="_blank" rel="noopener"><i class="far fa-file-pdf" aria-hidden="true"></i> PDF</a>
                             <a class="paper-action paper-action-doi" href="https://doi.org/10.1007/978-981-95-6813-0_26" target="_blank" rel="noopener"><i class="fas fa-link" aria-hidden="true"></i> DOI</a>
