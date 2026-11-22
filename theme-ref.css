@@ -271,3 +271,7 @@ body {
 .project-list .project-thumb a { height: 146px !important; }
 .project-list .project-row { grid-template-columns: 260px minmax(0, 1fr) !important; }
 @media (max-width: 700px) { .project-list .project-row { grid-template-columns: 1fr !important; } .project-list .project-thumb a { height: auto !important; } }
+
+/* visitor map under the sidebar links */
+.sidebar .visitor-map { margin-top: 16px; width: 100%; max-width: 210px; overflow: hidden; }
+.sidebar .visitor-map img, .sidebar .visitor-map canvas, .sidebar .visitor-map a { max-width: 100% !important; height: auto; display: block; }
