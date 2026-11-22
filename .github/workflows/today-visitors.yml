@@ -1,0 +1,50 @@
+name: Refresh today's visitors
+
+# Reads "Today" from the public Stats4U statistics page (viewing it does not
+# count as a visit) and publishes it as today.json on the orphan branch
+# `visitor-stats`. The homepage fetches that file from raw.githubusercontent.com
+# and shows the number as plain text in the footer. The branch is force-pushed
+# with a single commit, so main's history stays clean.
+
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: today-visitors
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Read today's count from Stats4U
+        id: read
+        run: |
+          html=$(curl -fsSL --max-time 30 "https://www.stats4u.net/live/2197491523")
+          today=$(printf '%s' "$html" | grep -o 'id="sbToday">[^<]*' | head -1 | sed 's/.*>//; s/[^0-9]//g')
+          total=$(printf '%s' "$html" | grep -o 'id="lhTotal">[^<]*' | head -1 | sed 's/.*>//; s/[^0-9]//g')
+          if [ -z "$today" ]; then echo "Could not read today's count"; exit 1; fi
+          echo "today=$today" >> "$GITHUB_OUTPUT"
+          echo "total=${total:-0}" >> "$GITHUB_OUTPUT"
+
+      - name: Publish today.json to the visitor-stats branch
+        env:
+          TODAY: ${{ steps.read.outputs.today }}
+          TOTAL: ${{ steps.read.outputs.total }}
+          REPO: ${{ github.repository }}
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir out && cd out
+          printf '{"today": %s, "total": %s, "updated": "%s"}\n' "$TODAY" "$TOTAL" "$(date -u +%Y-%m-%dT%H:%M:%SZ)" > today.json
+          cat today.json
+          git init -q -b visitor-stats
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add today.json
+          git commit -q -m "chore: today's visitors"
+          git push -q -f "https://x-access-token:${TOKEN}@github.com/${REPO}.git" visitor-stats
