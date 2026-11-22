@@ -46,7 +46,7 @@
     
     <link rel="stylesheet" href="styles.css?v=20260827a">
     <link rel="stylesheet" href="theme-acad.css?v=20261120e">
-    <link rel="stylesheet" href="theme-ref.css?v=20261122m">
+    <link rel="stylesheet" href="theme-ref.css?v=20261123a">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&amp;family=Permanent+Marker&amp;family=Source+Sans+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.2/css/academicons.min.css">
@@ -533,7 +533,8 @@
                     
 
                     <div id="page-stats" style="margin-top:12px; color:#666; font-size:0.95em;">
-                        Total site views: <span id="vercount_value_site_pv">Loading...</span>. Total site visitors: <span id="vercount_value_site_uv">Loading...</span>. Today's visitors: <span id="today_uv">Loading...</span>.
+                        Total site views: <span id="vercount_value_site_pv">Loading...</span>. Total site visitors: <span id="vercount_value_site_uv">Loading...</span>.
+                        <span class="today-counter" title="Today's unique visitors (Stats4U)"><script src="https://www.stats4u.net/s4u.js" data-id="2197491523" data-style="950" data-params="form=panel&amp;pal=indigo&amp;el=1" data-metric="unique" async></script></span>
                     </div>
                 </div>
             </div>
@@ -572,23 +573,6 @@
     this.removeAttribute('aria-live');
     });
 
-    </script>
-
-    <!-- GoatCounter: privacy-friendly analytics; powers the "Today's visitors" count. -->
-    <script data-goatcounter="https://thy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-    <script>
-    // Today's visitors = GoatCounter unique visits since 00:00 Beijing time.
-    // GoatCounter counts a visitor once per session, so refreshing the page
-    // on the same day does not increase the number.
-    (function () {
-        var el = document.getElementById('today_uv');
-        if (!el) return;
-        var day = new Date(Date.now() + 8 * 3600 * 1000).toISOString().slice(0, 10);
-        fetch('https://thy.goatcounter.com/counter/TOTAL.json?start=' + day)
-            .then(function (r) { return r.ok ? r.json() : (r.status === 404 ? { count: '0' } : Promise.reject(r.status)); })
-            .then(function (d) { el.textContent = (d && d.count) ? String(d.count).trim() : '0'; })
-            .catch(function () { el.textContent = '—'; });
-    })();
     </script>
 
     <script>

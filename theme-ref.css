@@ -275,3 +275,7 @@ body {
 /* visitor map under the sidebar links */
 .sidebar .visitor-map { margin-top: 16px; width: 100%; max-width: 210px; overflow: hidden; }
 .sidebar .visitor-map img, .sidebar .visitor-map canvas, .sidebar .visitor-map a { max-width: 100% !important; height: auto; display: block; }
+
+/* Stats4U "Today" counter at the right end of the footer stats line */
+#page-stats .today-counter { display: inline-block; margin-left: 6px; vertical-align: middle; line-height: 0; }
+#page-stats .today-counter img { height: 30px !important; width: auto !important; vertical-align: middle !important; }
