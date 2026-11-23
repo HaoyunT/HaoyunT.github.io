@@ -534,7 +534,6 @@
 
                     <div id="page-stats" style="margin-top:12px; color:#666; font-size:0.95em;">
                         Total site views: <span id="vercount_value_site_pv">Loading...</span>. Total site visitors: <span id="vercount_value_site_uv">Loading...</span>.
-                        Today's visitors: <span id="today_uv">Loading...</span>.
                     </div>
                 </div>
             </div>
@@ -596,21 +595,6 @@
     }
     </script>
 
-    <!-- Stats4U invisible counter (design 980): counts each visitor once per day, shows nothing.
-         The number is read from the public Stats4U page by .github/workflows/today-visitors.yml. -->
-    <script src="https://www.stats4u.net/s4u.js" data-id="2197491523" data-style="980" data-metric="unique" async></script>
-    <script>
-    // Show today's unique visitors as plain text (published by the GitHub Action).
-    (function () {
-        var el = document.getElementById('today_uv');
-        if (!el) return;
-        var url = 'https://raw.githubusercontent.com/HaoyunT/HaoyunT.github.io/visitor-stats/today.json?t=' + Math.floor(Date.now() / 60000);
-        fetch(url, { cache: 'no-store' })
-            .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
-            .then(function (d) { el.textContent = (typeof d.today === 'number') ? d.today.toLocaleString() : '—'; })
-            .catch(function () { el.textContent = '—'; });
-    })();
-    </script>
 
 </body>
 </html>
